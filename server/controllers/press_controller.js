@@ -1,9 +1,9 @@
-const User = require("../models/game_schema");
+const Press = require("../models/game_schema");
 
 const createData = (req, res) => {
-  User.create(req.body)
+  Press.create(req.body)
     .then((data) => {
-      console.log("New User Created!", data);
+      console.log("New Press Created!", data);
       res.status(201).json(data);
     })
     .catch((err) => {
@@ -18,7 +18,7 @@ const createData = (req, res) => {
 };
 
 const readData = (req, res) => {
-  User.find()
+  Press.find()
     .then((data) => {
       res.status(200).json(data);
     })
@@ -29,12 +29,12 @@ const readData = (req, res) => {
 };
 
 const updateData = (req, res) => {
-  User.findByIdAndUpdate(req.params.id, req.body, {
+  Press.findByIdAndUpdate(req.params.id, req.body, {
     useFindAndModify: false,
     new: true,
   })
     .then((data) => {
-      console.log("User updated!");
+      console.log("Press updated!");
       res.status(201).json(data);
     })
     .catch((err) => {
@@ -49,15 +49,15 @@ const updateData = (req, res) => {
 };
 
 const deleteData = (req, res) => {
-  User.findById(req.params.id)
+  Press.findById(req.params.id)
     .then((data) => {
       if (!data) {
-        throw new Error("User not available");
+        throw new Error("Press not available");
       }
       return data.remove();
     })
     .then((data) => {
-      console.log("User removed!");
+      console.log("Press removed!");
       res.status(200).json(data);
     })
     .catch((err) => {
