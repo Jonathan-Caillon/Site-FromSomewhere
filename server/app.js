@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const api = require("./routes/api");
 require("dotenv").config();
 mongoose
   .connect(process.env.DB_URL, {
@@ -23,6 +24,6 @@ app.set("view engine", "html");
 // Static folder
 app.use(express.static(__dirname + "/views/"));
 
-app.use("/api", require("./routes/api"));
+app.use("/api", api);
 app.listen(port);
 module.exports = app;
