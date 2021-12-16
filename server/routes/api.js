@@ -1,30 +1,22 @@
 const express = require("express");
 
-const user_controller = require("../controllers/user_controller");
-const game_controller = require("../controllers/game_controller");
-const press_controller = require("../controllers/press_controller");
+const game_router = require("./router/game_router");
+const press_router = require("./router/press_router");
+const users_router = require("./router/users_router");
 
 const router = express.Router();
 
-// Users router
 router
-  .post("/users", user_controller.createData)
-  .get("/users", user_controller.readData)
-  .put("/users/:id", user_controller.updateData)
-  .delete("/users/:id", user_controller.deleteData)
+  // Users router
+
+  .use("/users", users_router)
 
   // Game router
 
-  .post("/game", game_controller.createData)
-  .get("/game", game_controller.readData)
-  .put("/game/:id", game_controller.updateData)
-  .delete("/game/:id", game_controller.deleteData)
+  .use("/game", game_router)
 
   // Press router
 
-  .post("/press", press_controller.createData)
-  .get("/press", press_controller.readData)
-  .put("/press/:id", press_controller.updateData)
-  .delete("/press/:id", press_controller.deleteData);
+  .use("/press", press_router);
 
 module.exports = router;

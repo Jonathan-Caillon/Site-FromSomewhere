@@ -1,4 +1,4 @@
-const Press = require("../models/game_schema");
+const Press = require("../models/press_schema");
 
 const createData = (req, res) => {
   Press.create(req.body)
