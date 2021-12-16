@@ -6,10 +6,6 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  release: {
-    type: String,
-    required: true,
-  },
   genre: {
     type: String,
     required: true,

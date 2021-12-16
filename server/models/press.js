@@ -5,11 +5,11 @@ const pressSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "title field is required"],
     },
     body: {
       type: String,
-      required: true,
+      required: [true, "body field is required"],
     },
   },
   { timestamps: true }
