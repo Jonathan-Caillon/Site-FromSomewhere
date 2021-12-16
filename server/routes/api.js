@@ -1,14 +1,12 @@
 const express = require("express");
 
 const user_controller = require("../controllers/user_controller");
-
 const game_controller = require("../controllers/game_controller");
-
 const press_controller = require("../controllers/press_controller");
 
 const router = express.Router();
 
-// users router
+// Users router
 router
   .post("/users", user_controller.createData)
   .get("/users", user_controller.readData)

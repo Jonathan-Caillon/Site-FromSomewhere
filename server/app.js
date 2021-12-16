@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+var cors = require("cors");
 const api = require("./routes/api");
 require("dotenv").config();
 mongoose
@@ -19,12 +20,17 @@ mongoose.connection.on("open", () => {
 const port = process.env.PORT || 9000;
 // middleware
 app.use(express.json());
+app.use(cors());
 app.set("view engine", "html");
 
 // Static folder
 app.use(express.static(__dirname + "/views/"));
 
 app.use("/api", api);
+
+app.use((req, res) => {
+  res.sendFile(__dirname + "/views/index.html");
+});
 
 app.listen(port);
 module.exports = app;
