@@ -14,6 +14,22 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
+  fileName: {
+    type: String,
+    required: true,
+  },
+  filePath: {
+    type: String,
+    required: true,
+  },
+  fileType: {
+    type: String,
+    required: true,
+  },
+  fileSize: {
+    type: String,
+    required: true,
+  },
 });
 
 const Game = mongoose.model("Game", gameSchema);
