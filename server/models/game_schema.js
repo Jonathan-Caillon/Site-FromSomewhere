@@ -2,35 +2,39 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
-  title: {
+  imageName: {
     type: String,
     required: true,
   },
-  genre: {
+  imagePath: {
     type: String,
     required: true,
   },
-  player: {
+  imageType: {
     type: String,
     required: true,
   },
-  fileName: {
+  imageSize: {
     type: String,
     required: true,
   },
-  filePath: {
+  gameTitleName: {
     type: String,
     required: true,
   },
-  fileType: {
+  gameTitlePath: {
     type: String,
     required: true,
   },
-  fileSize: {
+  gameTitleType: {
+    type: String,
+    required: true,
+  },
+  gameTitleSize: {
     type: String,
     required: true,
   },
 });
 
-const Game = mongoose.model("Game", gameSchema);
+const Game = mongoose.model("Game", gameSchema, "game");
 module.exports = Game;

@@ -1,15 +1,11 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <p ref="name">{{ title }}</p>
-    <form @submit.prevent="postUser">
-      <label for="nom">name</label>
-      <input id="nom" type="text" v-model="nom" />
-      <label for="age">age</label>
-      <input id="age" type="text" v-model="age" />
-      <label for="age">Player</label>
-      <input id="age" type="text" v-model="player" />
-      <input type="file" v-model="image" />
+    <form @submit.prevent="postUser" enctype="multipart/form-data">
+      <label for="gameTitle">Title</label>
+      <input id="gameTitle" type="file" name="gameTitle" />
+      <label for="image">File</label>
+      <input id="image" type="file" name="image" />
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -17,13 +13,11 @@
 
 <script>
 const axios = require("axios");
+
 export default {
   data() {
     return {
-      title: "Test du titre",
-      nom: "",
-      age: "",
-      image: "",
+      title: "Titre",
     };
   },
   mounted() {
@@ -36,10 +30,17 @@ export default {
   },
   methods: {
     postUser() {
-      axios.post("http://localhost:9000/api/users", {
-        name: this.nom,
-        age: this.age,
+      let formData = new FormData();
+      let imagefile = document.querySelector("#image");
+      formData.append("image", imagefile.files[0]);
+      let gameTitle = document.querySelector("#gameTitle");
+      formData.append("gameTitle", gameTitle.files[0]);
+      axios.post("http://localhost:9000/api/game", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
+      console.log(formData);
     },
   },
 };

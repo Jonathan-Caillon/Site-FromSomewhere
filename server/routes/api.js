@@ -9,7 +9,7 @@ const router = express.Router();
 router
   // Users router
 
-  .use("/users", users_router)
+  .use("/user", users_router)
 
   // Game router
 

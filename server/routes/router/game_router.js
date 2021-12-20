@@ -4,7 +4,14 @@ const game_controller = require("../../controllers/game_controller");
 const { upload } = require("../../helper/filehelper");
 
 router
-  .post("/", upload.single("file"), game_controller.createData)
+  .post(
+    "/",
+    upload.fields([
+      { name: "image", maxCount: 1 },
+      { name: "gameTitle", maxCount: 1 },
+    ]),
+    game_controller.createData
+  )
   .get("/", game_controller.readData)
   .put("/:id", game_controller.updateData)
   .delete("/:id", game_controller.deleteData);

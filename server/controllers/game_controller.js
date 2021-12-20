@@ -1,20 +1,36 @@
 const Game = require("../models/game_schema");
+const fs = require("fs");
+const fileSizeFormatter = (bytes, decimal) => {
+  if (bytes === 0) {
+    return "0 Bytes";
+  }
+  const dm = decimal || 2;
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "YB", "ZB"];
+  const index = Math.floor(Math.log(bytes) / Math.log(1000));
+  return (
+    parseFloat((bytes / Math.pow(1000, index)).toFixed(dm)) + " " + sizes[index]
+  );
+};
 
-const createData = (req, res) => {
-  Game.create(req.body)
-    .then((data) => {
-      console.log("New Game Created!", data);
-      res.status(201).json(data);
-    })
-    .catch((err) => {
-      if (err.name === "ValidationError") {
-        console.error("Error Validating!", err);
-        res.status(422).json(err);
-      } else {
-        console.error(err);
-        res.status(500).json(err);
-      }
+const createData = async (req, res) => {
+  try {
+    const file = new Game({
+      imageName: req.files.image[0].originalname,
+      imagePath: req.files.image[0].path,
+      imageType: req.files.image[0].mimetype,
+      imageSize: fileSizeFormatter(req.files.image[0].size, 2),
+      gameTitleName: req.files.gameTitle[0].originalname,
+      gameTitlePath: req.files.gameTitle[0].path,
+      gameTitleType: req.files.gameTitle[0].mimetype,
+      gameTitleSize: fileSizeFormatter(req.files.gameTitle[0].size, 2),
     });
+    await file.save();
+    res.status(201).send("File uploaded Successfully");
+  } catch (error) {
+    res.status(400).send(error.message);
+    fs.unlink(`../${req.files.image[0].path}`);
+    fs.unlink(`../${req.files.gameTitle[0].path}`);
+  }
 };
 
 const readData = (req, res) => {
