@@ -3,9 +3,15 @@
     <h1>This is an about page</h1>
     <form @submit.prevent="postUser" enctype="multipart/form-data">
       <label for="gameTitle">Title</label>
+      <br />
       <input id="gameTitle" type="file" name="gameTitle" />
+      <br />
+      <br />
       <label for="image">File</label>
+      <br />
       <input id="image" type="file" name="image" />
+      <br />
+      <br />
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -20,14 +26,14 @@ export default {
       title: "Titre",
     };
   },
-  mounted() {
-    axios
-      .get("http://localhost:9000/api/game")
-      .then((response) => (this.title = response.data))
-      .catch((error) => {
-        console.log(error);
-      });
-  },
+  // mounted() {
+  //   axios
+  //     .get("http://localhost:9000/api/game")
+  //     .then((response) => (this.title = response.data))
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
   methods: {
     postUser() {
       let formData = new FormData();
@@ -35,12 +41,15 @@ export default {
       formData.append("image", imagefile.files[0]);
       let gameTitle = document.querySelector("#gameTitle");
       formData.append("gameTitle", gameTitle.files[0]);
-      axios.post("http://localhost:9000/api/game", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      console.log(formData);
+      axios
+        .post("http://localhost:9000/api/game", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          location.reload();
+        });
     },
   },
 };

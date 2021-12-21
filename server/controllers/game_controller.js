@@ -1,5 +1,6 @@
 const Game = require("../models/game_schema");
 const fs = require("fs");
+
 const fileSizeFormatter = (bytes, decimal) => {
   if (bytes === 0) {
     return "0 Bytes";
