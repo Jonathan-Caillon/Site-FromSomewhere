@@ -10,6 +10,12 @@ const pressSchema = new Schema({
     type: String,
     required: [true, "body field is required"],
   },
+  categorie: {
+    type: String,
+    enum: ["NEW", "STATUS"],
+    default: "NEW",
+    required: [true, "body field is required"],
+  },
 });
 
 const Press = mongoose.model("Press", pressSchema, "press");

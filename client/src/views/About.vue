@@ -1,8 +1,14 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <form @submit.prevent="postUser" enctype="multipart/form-data">
+    <h1>Game content</h1>
+    <form
+      @submit.prevent="postUser"
+      enctype="multipart/form-data"
+      method="post"
+    >
       <label for="gameTitle">Title</label>
+      <br />
+      <input type="text" v-model="title" />
       <br />
       <input id="gameTitle" type="file" name="gameTitle" />
       <br />
@@ -14,16 +20,22 @@
       <br />
       <button type="submit">Submit</button>
     </form>
+    <br />
+    <h1>Press content</h1>
+    <br />
+    <form @submit.prevent="">
+      <div name="content" id="editor"></div>
+      <p><input type="submit" value="Submit" /></p>
+    </form>
   </div>
 </template>
 
 <script>
 const axios = require("axios");
-
 export default {
   data() {
     return {
-      title: "Titre",
+      title: "",
     };
   },
   // mounted() {
@@ -41,6 +53,7 @@ export default {
       formData.append("image", imagefile.files[0]);
       let gameTitle = document.querySelector("#gameTitle");
       formData.append("gameTitle", gameTitle.files[0]);
+      formData.append("title", this.title);
       axios
         .post("http://localhost:9000/api/game", formData, {
           headers: {

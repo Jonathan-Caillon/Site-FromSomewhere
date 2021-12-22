@@ -15,7 +15,10 @@ const fileSizeFormatter = (bytes, decimal) => {
 
 const createData = async (req, res) => {
   try {
+    console.log(req.files);
+    console.log(req.body.title);
     const file = new Game({
+      title: req.body.title,
       imageName: req.files.image[0].originalname,
       imagePath: req.files.image[0].path,
       imageType: req.files.image[0].mimetype,
@@ -29,8 +32,6 @@ const createData = async (req, res) => {
     res.status(201).send("File uploaded Successfully");
   } catch (error) {
     res.status(400).send(error.message);
-    fs.unlink(`../${req.files.image[0].path}`);
-    fs.unlink(`../${req.files.gameTitle[0].path}`);
   }
 };
 
