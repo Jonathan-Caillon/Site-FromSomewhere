@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'ITC Eras Ultra BT';
+  src: url(../fonts/ITC_Eras_Ultra_BT.otf);
+}
+
+:root {
+  --logo: 'ITC Eras Ultra BT', arial, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.fs-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  height: 200px;
+}
+
+.fs-header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFF;
+  font-family: var(--logo);
+  font-size: 35px;
+  letter-spacing: -2.5px;
+  pointer-events: none;
+}
+
+.fs-header__logo > span {
+  margin-left: 5px;
+}
+
+.fs-header__navbar {
+  width: 25%;
+  height: 100%;
+}
+
+.fs-header__navbar__nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fs-header__navbar__nav__items {
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #FFF;
+}
+
+.fs-games {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
+}
+
+.fs-games__item {
+  width: calc(100vw * 1.2 / 5);
+  height: 100%;
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.fs-games__item > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: skewX(20deg) translate(-50%, -50%);
+          transform: skewX(20deg) translate(-50%, -50%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fs-games__item .title {
+  opacity: 0;
+  -webkit-transform: skewX(20deg) translate(-50%, -50%);
+          transform: skewX(20deg) translate(-50%, -50%);
+  width: 600px;
+}
+
+.fs-games .game1 > img {
+  -webkit-transform: skewX(20deg) translate(-35%, -50%);
+          transform: skewX(20deg) translate(-35%, -50%);
+}
+
+.fs-games .game1 > .title {
+  -webkit-transform: skewX(20deg) translate(-25%, -50%);
+          transform: skewX(20deg) translate(-25%, -50%);
+}
+
+.fs-games .game2 > img {
+  -webkit-transform: skewX(20deg) translate(-50%, -50%);
+          transform: skewX(20deg) translate(-50%, -50%);
+}
+
+.fs-games .game2 > .title {
+  -webkit-transform: skewX(20deg) translate(-40%, -50%);
+          transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game3 > img {
+  -webkit-transform: skewX(20deg) translate(-40%, -50%);
+          transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game3 > .title {
+  -webkit-transform: skewX(20deg) translate(-47%, -50%);
+          transform: skewX(20deg) translate(-47%, -50%);
+}
+
+.fs-games .game4 > img {
+  -webkit-transform: skewX(20deg) translate(-40%, -50%);
+          transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game4 > .title {
+  -webkit-transform: skewX(20deg) translate(-40%, -50%);
+          transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game5 > img {
+  -webkit-transform: skewX(20deg) translate(-40%, -50%);
+          transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game5 > .title {
+  -webkit-transform: skewX(20deg) translate(-45%, -50%);
+          transform: skewX(20deg) translate(-45%, -50%);
+}
+
+.fs-games .hovered {
+  width: calc((100vw * 1.2 / 5) * 1.5);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fs-games .hovered > img {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.fs-games .hovered .title {
+  opacity: 100%;
+}
+
+.fs-games .active {
+  z-index: 10;
+}
+
+.fs-games__item:nth-child(odd) {
+  background-color: black;
+}
+
+.fs-games__item:nth-child(even) {
+  background-color: grey;
+}
+/*# sourceMappingURL=style.css.map */

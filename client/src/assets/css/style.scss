@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'ITC Eras Ultra BT';
+    src: url(../fonts/ITC_Eras_Ultra_BT.otf);
+}
+
+:root{
+    // FONTS
+    --logo: 'ITC Eras Ultra BT', arial, sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+    // NAVBAR
+
+.fs-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 200px;
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        font-family: var(--logo);
+        font-size: 35px;
+        letter-spacing: -2.5px;
+        pointer-events: none;
+
+        & > span{
+            margin-left: 5px;
+        }
+    }
+    &__navbar{
+        width: 25%;
+        height: 100%;
+        &__nav{
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &__items{
+                padding: 5px 10px;
+                font-size: 18px;
+                color: #FFF;
+            }
+        }
+    }
+
+}
+
+    // GAMES
+
+.fs-games{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    transform: translateX(-10%);
+
+    &__item{
+        width: calc(100vw * 1.2 / 5);
+        height: 100%;
+        transform: skewX(-20deg);
+        transition: .5s;
+        overflow: hidden;
+
+        & > img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            transform: skewX(20deg) translate(-50%, -50%);
+            filter: grayscale(100%);
+            transition: .3s;
+        }
+        & .title{
+            opacity: 0;
+            transform: skewX(20deg) translate(-50%, -50%);
+            width: 600px;
+        }
+    }
+    & .game1{
+        & > img{
+            transform: skewX(20deg) translate(-35%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-25%, -50%);
+        } 
+
+    }
+    & .game2{
+        & > img{
+            transform: skewX(20deg) translate(-50%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-40%, -50%);
+        } 
+
+    }
+    & .game3{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%)
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-47%, -50%);
+        } 
+
+    }
+    & .game4{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%)
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-40%, -50%);
+        } 
+
+    }
+    & .game5{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%)
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-45%, -50%);
+        } 
+    }
+    & .hovered{
+        width: calc((100vw * 1.2 / 5) * 1.5);
+        transition: .3s;
+
+        & > img{
+            filter: grayscale(0%);
+        }
+        & .title{
+            opacity: 100%;
+        }
+    }
+    & .active{
+        z-index: 10;
+    }
+    &__item:nth-child(odd){
+        background-color: black;
+    }
+    &__item:nth-child(even){
+        background-color: grey;
+    }
+}
