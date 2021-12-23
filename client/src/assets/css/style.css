@@ -38,6 +38,7 @@ body {
           justify-content: space-between;
   width: 90%;
   height: 200px;
+  pointer-events: none;
 }
 
 .fs-header__logo {
@@ -76,9 +77,19 @@ body {
 }
 
 .fs-header__navbar__nav__items {
+  pointer-events: all;
   padding: 5px 10px;
   font-size: 18px;
   color: #FFF;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fs-header__navbar__nav__items:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .fs-games {

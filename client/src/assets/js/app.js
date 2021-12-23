@@ -9,9 +9,15 @@ window.onload = function(){
                         document.querySelector(".fs-games").style.transform = "translate(-10%)"
                         element.classList.remove("hovered");
                         element.style.width = "100vw";
-                        element.querySelector("img").style.transform = "skewX(0) translate(-50%, -50%)"
+                        element.querySelector("img").style.transform = "skewX(0) translate(-50%, -50%)";
+                        element.querySelector("img").style.filter = "grayscale(0)";
+                        element.querySelector(".title").style.opacity = "100%";
+                        element.querySelector(".title").style.filter = "grayscale(0)";
+                        element.querySelector(".title").style.transform = "skewX(0) translateY(-50%) scale(1.3)";
+                        element.querySelector(".title").style.top = "40%";
+                        element.querySelector(".title").style.left = "8%";
                         if(element.classList.contains("game1")){
-                            element.style.transform = "skewX(0) translate(20.78%)";
+                            element.style.transform = "skewX(0) translate(19.58%)";
                             element.querySelector("img").style.transform = "translate(-50%, -50%)"
                         }
                         else if(element.classList.contains("game2")){
@@ -30,12 +36,10 @@ window.onload = function(){
                             element.style.transform = "skewX(0) translate(-76.38%)";
                             element.querySelector("img").style.transform = "translate(-50%, -50%)"
                         }
+                        enlarge = false;
                     }else{
                         element.style.opacity = "0";
                     }
-                }else{
-                    element.querySelector("img").style.transform = "skewX(0) translate(-50%, -50%)"
-                    element.style.opacity = "100%";
                 }
             });
         })

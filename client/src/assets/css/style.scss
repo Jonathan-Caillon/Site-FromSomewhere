@@ -33,6 +33,7 @@ body{
     justify-content: space-between;
     width: 90%;
     height: 200px;
+    pointer-events: none;
 
     &__logo{
         display: flex;
@@ -57,9 +58,16 @@ body{
             align-items: center;
 
             &__items{
+                pointer-events: all;
                 padding: 5px 10px;
                 font-size: 18px;
                 color: #FFF;
+                transition: .3s;
+                
+                &:hover{
+                    transform: scale(1.1);
+                    transition: .3s;
+                }
             }
         }
     }
