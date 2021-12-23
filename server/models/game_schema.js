@@ -6,19 +6,15 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
+  body: {
+    type: String,
+    required: true,
+  },
   imageName: {
     type: String,
     required: true,
   },
   imagePath: {
-    type: String,
-    required: true,
-  },
-  imageType: {
-    type: String,
-    required: true,
-  },
-  imageSize: {
     type: String,
     required: true,
   },
@@ -30,14 +26,7 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  gameTitleType: {
-    type: String,
-    required: true,
-  },
-  gameTitleSize: {
-    type: String,
-    required: true,
-  },
+  metacritique: [Object],
 });
 
 const Game = mongoose.model("Game", gameSchema, "game");

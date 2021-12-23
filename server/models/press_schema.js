@@ -6,15 +6,26 @@ const pressSchema = new Schema({
     type: String,
     required: [true, "title field is required"],
   },
+  imageName: {
+    type: String,
+    required: true,
+  },
+  imagePath: {
+    type: String,
+    required: true,
+  },
+  excerpt: {
+    type: String,
+    required: [true, "excerpt field is required"],
+  },
   body: {
     type: String,
     required: [true, "body field is required"],
   },
-  categorie: {
-    type: String,
-    enum: ["NEW", "STATUS"],
-    default: "NEW",
-    required: [true, "body field is required"],
+  date: {
+    type: Date,
+    default: Date.now,
+    required: true,
   },
 });
 

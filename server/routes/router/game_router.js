@@ -10,6 +10,7 @@ router
       { name: "image", maxCount: 1 },
       { name: "gameTitle", maxCount: 1 },
       { name: "title", maxCount: 1 },
+      { name: "gameBody", maxCount: 1 },
     ]),
     game_controller.createData
   )

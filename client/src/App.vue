@@ -11,7 +11,7 @@ export default {
   watch: {
     $route: {
       immediate: true,
-      handler(to, from) {
+      handler(to) {
         document.title = to.meta.title || "Some Default Title";
       },
     },

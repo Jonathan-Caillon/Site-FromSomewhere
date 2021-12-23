@@ -1,32 +1,17 @@
 const Game = require("../models/game_schema");
 const fs = require("fs");
 
-const fileSizeFormatter = (bytes, decimal) => {
-  if (bytes === 0) {
-    return "0 Bytes";
-  }
-  const dm = decimal || 2;
-  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "YB", "ZB"];
-  const index = Math.floor(Math.log(bytes) / Math.log(1000));
-  return (
-    parseFloat((bytes / Math.pow(1000, index)).toFixed(dm)) + " " + sizes[index]
-  );
-};
-
 const createData = async (req, res) => {
   try {
     console.log(req.files);
-    console.log(req.body.title);
+    console.log(req.body.gameBody);
     const file = new Game({
       title: req.body.title,
+      body: req.body.gameBody,
       imageName: req.files.image[0].originalname,
       imagePath: req.files.image[0].path,
-      imageType: req.files.image[0].mimetype,
-      imageSize: fileSizeFormatter(req.files.image[0].size, 2),
       gameTitleName: req.files.gameTitle[0].originalname,
       gameTitlePath: req.files.gameTitle[0].path,
-      gameTitleType: req.files.gameTitle[0].mimetype,
-      gameTitleSize: fileSizeFormatter(req.files.gameTitle[0].size, 2),
     });
     await file.save();
     res.status(201).send("File uploaded Successfully");
@@ -47,6 +32,7 @@ const readData = (req, res) => {
 };
 
 const updateData = (req, res) => {
+  console.log(req.body);
   Game.findByIdAndUpdate(req.params.id, req.body, {
     useFindAndModify: false,
     new: true,

@@ -1,6 +1,7 @@
 const Press = require("../models/press_schema");
 
 const createData = (req, res) => {
+  console.log(req.body);
   Press.create(req.body)
     .then((data) => {
       console.log("New Press Created!", data);
