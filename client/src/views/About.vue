@@ -219,7 +219,7 @@ export default {
     },
     postMeta() {
       axios
-        .put("http://localhost:9000/api/game/61c4749c7e449b86b6d3ccf5", {
+        .put("http://localhost:9000/api/game/61d48a71f1d92547602f4563", {
           metacritique: this.metacritique,
         })
         .then((res) => {

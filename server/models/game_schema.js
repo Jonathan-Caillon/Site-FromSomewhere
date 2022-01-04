@@ -26,7 +26,18 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  metacritique: [Object],
+  metacritique: [
+    {
+      title: {
+        type: String,
+        required: true,
+      },
+      body: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
 const Game = mongoose.model("Game", gameSchema, "game");
