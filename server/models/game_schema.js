@@ -10,6 +10,10 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: Date,
+    required: true,
+  },
   imageName: {
     type: String,
     required: true,
@@ -28,7 +32,7 @@ const gameSchema = new Schema({
   },
   metacritique: [
     {
-      title: {
+      author: {
         type: String,
         required: true,
       },
