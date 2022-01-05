@@ -11,6 +11,7 @@ router
       { name: "gameTitle", maxCount: 1 },
       { name: "title", maxCount: 1 },
       { name: "gameBody", maxCount: 1 },
+      { name: "gameDate", maxCount: 1 },
     ]),
     game_controller.createData
   )

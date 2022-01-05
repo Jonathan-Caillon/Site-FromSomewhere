@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>Game content</h1>
+    <!-- Form post Game -->
     <form
       @submit.prevent="postUser"
       enctype="multipart/form-data"
@@ -11,6 +12,11 @@
       <input type="text" v-model="title" />
       <br />
       <input id="gameTitle" type="file" name="gameTitle" />
+      <br />
+      <br />
+      <label for="gameTitle">Date</label>
+      <br />
+      <input type="text" v-model="gameDate" />
       <br />
       <br />
       <label for="gameBody">Body</label>
@@ -25,6 +31,7 @@
       <br />
       <button type="submit">Submit</button>
     </form>
+    <!-- Form post Press article -->
     <br />
     <h1>Press content</h1>
     <br />
@@ -32,6 +39,11 @@
       <label for="pressTitle">PressTitle</label>
       <br />
       <input type="text" v-model="pressTitle" />
+      <br />
+      <br />
+      <label for="pressExcerpt">PressExcerpt</label>
+      <br />
+      <input type="text" v-model="pressExcerpt" />
       <br />
       <br />
       <ckeditor
@@ -42,6 +54,7 @@
       <p><input id="postPress" type="submit" value="Submit" /></p>
     </form>
     <br />
+    <!-- Metacritique -->
     <form @submit.prevent="postMeta">
       <label for="metacritique">Metacritique</label>
       <br />
@@ -159,14 +172,16 @@ export default {
     return {
       title: "",
       gameBody: "",
+      gameDate: "",
+      metacritique: "",
       PressArticle: "",
       pressTitle: "",
+      pressExcerpt: "",
       editor: ClassicEditor,
       editorData: "<p>Content of the editor.</p>",
       editorConfig: {
         // The configuration of the editor.
       },
-      metacritique: "",
     };
   },
   components: {
@@ -180,7 +195,7 @@ export default {
 
         const test = document.querySelector("#tasks");
         for (let i = 0; i < response.data[0].metacritique.length; i++) {
-          test.innerHTML += response.data[0].metacritique[i];
+          test.innerHTML += response.data[0].metacritique[i].author;
         }
       })
 
@@ -197,6 +212,7 @@ export default {
       formData.append("gameTitle", gameTitle.files[0]);
       formData.append("title", this.title);
       formData.append("gameBody", this.gameBody);
+      formData.append("gameDate", this.gameDate);
       axios
         .post("http://localhost:9000/api/game", formData, {
           headers: {

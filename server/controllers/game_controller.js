@@ -8,6 +8,7 @@ const createData = async (req, res) => {
     const file = new Game({
       title: req.body.title,
       body: req.body.gameBody,
+      date: req.body.gameDate,
       imageName: req.files.image[0].originalname,
       imagePath: req.files.image[0].path,
       gameTitleName: req.files.gameTitle[0].originalname,

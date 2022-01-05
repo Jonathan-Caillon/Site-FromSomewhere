@@ -22,6 +22,30 @@ const routes = [
       title: "About Page - Example App",
     },
   },
+  {
+    path: "/press",
+    name: "Press",
+    component: () => import("../views/Press.vue"),
+    meta: {
+      title: "Press Page - Example App",
+    },
+  },
+  {
+    path: "/support",
+    name: "Support",
+    component: () => import("../views/Support.vue"),
+    meta: {
+      title: "Press Page - Example App",
+    },
+  },
+  {
+    path: "/backoffice",
+    name: "Backoffice",
+    component: () => import("../views/Backoffice.vue"),
+    meta: {
+      title: "Backoffice Page - Example App",
+    },
+  },
 ];
 
 const router = createRouter({
