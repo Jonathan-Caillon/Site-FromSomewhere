@@ -189,7 +189,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:9000/api/game/")
+      .get("/api/game/")
       .then((response) => {
         console.log(response.data[0].metacritique);
 
@@ -214,7 +214,7 @@ export default {
       formData.append("gameBody", this.gameBody);
       formData.append("gameDate", this.gameDate);
       axios
-        .post("http://localhost:9000/api/game", formData, {
+        .post("/api/game", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
