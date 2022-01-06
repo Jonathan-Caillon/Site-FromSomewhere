@@ -1,5 +1,4 @@
 const Game = require("../models/game_schema");
-const fs = require("fs");
 
 const createData = async (req, res) => {
   try {
