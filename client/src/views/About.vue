@@ -69,6 +69,12 @@
         <form id="new-task-form">
           <input
             type="text"
+            name="new-author-input"
+            id="new-author-input"
+            placeholder="author?"
+          />
+          <input
+            type="text"
             name="new-task-input"
             id="new-task-input"
             placeholder="What do you have planned?"
@@ -105,13 +111,14 @@
 window.addEventListener("load", () => {
   const form = document.querySelector("#new-task-form");
   const input = document.querySelector("#new-task-input");
+  const author = document.querySelector("#new-author-input");
   const list_el = document.querySelector("#tasks");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const task = input.value;
-
+    const author_task = author.value;
     const task_el = document.createElement("div");
     task_el.classList.add("task");
 
@@ -225,7 +232,7 @@ export default {
     },
     postPress() {
       axios
-        .post("http://localhost:9000/api/press", {
+        .post("api/press", {
           title: this.pressTitle,
           body: this.editorData,
         })
@@ -235,7 +242,7 @@ export default {
     },
     postMeta() {
       axios
-        .put("http://localhost:9000/api/game/61d48a71f1d92547602f4563", {
+        .put("/api/game/61d48a71f1d92547602f4563", {
           metacritique: this.metacritique,
         })
         .then((res) => {
@@ -296,6 +303,20 @@ button {
 }
 
 #new-task-input::placeholder {
+  color: #6b7280;
+}
+
+#new-author-input {
+  flex: 1 1 0%;
+  background-color: #1f2937;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: #eee;
+  font-size: 1.25rem;
+}
+
+#new-author-input::placeholder {
   color: #6b7280;
 }
 
