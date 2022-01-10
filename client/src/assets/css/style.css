@@ -5,6 +5,7 @@
 
 :root {
   --logo: 'ITC Eras Ultra BT', arial, sans-serif;
+  --quotes: 'Adobe Garamond', arial, sans-serif;
 }
 
 * {
@@ -36,6 +37,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 90%;
   height: 200px;
   pointer-events: none;
@@ -108,9 +112,34 @@ body {
   height: 100%;
   -webkit-transform: skewX(-20deg);
           transform: skewX(-20deg);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: .5s !important;
+  transition: .5s !important;
   overflow: hidden;
+}
+
+.fs-games__item.large {
+  width: 100vw;
+}
+
+.fs-games__item.large > img {
+  -webkit-transform: skewX(0deg) translate(-50%, -50%) !important;
+          transform: skewX(0deg) translate(-50%, -50%) !important;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.fs-games__item.large > .title {
+  top: 40% !important;
+  left: 8% !important;
+  opacity: 100%;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  -webkit-transform: skewX(0) translateY(-50%) scale(1.3) !important;
+          transform: skewX(0) translateY(-50%) scale(1.3) !important;
+}
+
+.fs-games__item.large > ul {
+  opacity: 1;
 }
 
 .fs-games__item > img {
@@ -122,8 +151,8 @@ body {
           transform: skewX(20deg) translate(-50%, -50%);
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .fs-games__item .title {
@@ -131,6 +160,145 @@ body {
   -webkit-transform: skewX(20deg) translate(-50%, -50%);
           transform: skewX(20deg) translate(-50%, -50%);
   width: 600px;
+  pointer-events: none;
+}
+
+.fs-games__item__desc {
+  position: fixed;
+  bottom: 5%;
+  right: 7%;
+  padding: 20px 30px;
+  width: 400px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: 0;
+  color: #FFF;
+  font-size: 17px;
+  text-align: justify;
+  text-shadow: 1px 1px 5px #000;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+.fs-games__item__desc > span {
+  margin: -9px 0 0 -9px;
+  padding: 0 10px;
+  float: left;
+  font-size: 60px;
+}
+
+.fs-games__item__close {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translateY(-50%) scale(2);
+          transform: translateY(-50%) scale(2);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.fs-games__item__close > svg {
+  fill: #FFF;
+}
+
+.fs-games__item__meta {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fs-games__item__meta > li {
+  position: absolute;
+  color: #FFF;
+  font-family: var(--quotes);
+  width: auto;
+  max-width: 250px;
+  font-size: 28px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.fs-games__item__meta > li > span {
+  font-size: 20px;
+  opacity: .8;
+}
+
+.fs-games__item__meta > li:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
+  width: 100px;
+  background-image: url(../svg/left.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fs-games__item__meta > li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  height: 100%;
+  width: 100px;
+  background-image: url(../svg/right.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fs-games__item__meta > .meta1 {
+  bottom: 10%;
+  left: 5%;
+}
+
+.fs-games__item__meta > .meta2 {
+  bottom: 25%;
+  left: 20%;
+}
+
+.fs-games__item__meta > .meta3 {
+  bottom: 35%;
+  left: 75%;
+}
+
+.fs-games__item__meta > .meta4 {
+  bottom: 20%;
+  left: 50%;
+}
+
+.fs-games__item__meta > .meta5 {
+  bottom: 70%;
+  left: 70%;
+}
+
+.fs-games__item__meta > .meta6 {
+  bottom: 60%;
+  left: 35%;
 }
 
 .fs-games .game1 > img {
@@ -143,6 +311,23 @@ body {
           transform: skewX(20deg) translate(-25%, -50%);
 }
 
+.fs-games .game1.large {
+  -webkit-transform: skewX(0) translate(19.58%);
+          transform: skewX(0) translate(19.58%);
+}
+
+.fs-games .game1.large > img {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.fs-games .game1.large > .title {
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
+          transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
+}
+
 .fs-games .game2 > img {
   -webkit-transform: skewX(20deg) translate(-50%, -50%);
           transform: skewX(20deg) translate(-50%, -50%);
@@ -151,6 +336,11 @@ body {
 .fs-games .game2 > .title {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
           transform: skewX(20deg) translate(-40%, -50%);
+}
+
+.fs-games .game2.large {
+  -webkit-transform: skewX(0) translate(-4.38%);
+          transform: skewX(0) translate(-4.38%);
 }
 
 .fs-games .game3 > img {
@@ -163,6 +353,11 @@ body {
           transform: skewX(20deg) translate(-47%, -50%);
 }
 
+.fs-games .game3.large {
+  -webkit-transform: skewX(0) translate(-28.38%);
+          transform: skewX(0) translate(-28.38%);
+}
+
 .fs-games .game4 > img {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
           transform: skewX(20deg) translate(-40%, -50%);
@@ -173,6 +368,11 @@ body {
           transform: skewX(20deg) translate(-40%, -50%);
 }
 
+.fs-games .game4.large {
+  -webkit-transform: skewX(0) translate(-52.38%);
+          transform: skewX(0) translate(-52.38%);
+}
+
 .fs-games .game5 > img {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
           transform: skewX(20deg) translate(-40%, -50%);
@@ -181,6 +381,23 @@ body {
 .fs-games .game5 > .title {
   -webkit-transform: skewX(20deg) translate(-45%, -50%);
           transform: skewX(20deg) translate(-45%, -50%);
+}
+
+.fs-games .game5.large {
+  -webkit-transform: skewX(0) translate(-76.38%);
+          transform: skewX(0) translate(-76.38%);
+}
+
+.fs-games .game5.large > img {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.fs-games .game5.large > .title {
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
 }
 
 .fs-games .hovered {
@@ -195,11 +412,17 @@ body {
 }
 
 .fs-games .hovered .title {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .fs-games .active {
   z-index: 10;
+}
+
+.fs-games .active .fs-games__item__desc {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
 }
 
 .fs-games__item:nth-child(odd) {
@@ -208,5 +431,63 @@ body {
 
 .fs-games__item:nth-child(even) {
   background-color: grey;
+}
+
+.fs-footer {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 100px;
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.fs-footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 150px;
+}
+
+.fs-footer__credits {
+  font-size: 17px;
+  letter-spacing: -1px;
+  color: #000;
+}
+
+.fs-footer__credits > a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.fs-footer__inspiration {
+  font-size: 17px;
+  color: #000;
+}
+
+.fs-footer__inspiration > a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

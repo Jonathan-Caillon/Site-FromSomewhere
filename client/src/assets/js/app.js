@@ -1,48 +1,38 @@
 window.onload = function(){
     document.querySelectorAll(".fs-games__item").forEach(function(e){
-        let enlarge = true;
-        e.addEventListener("click", function(){
-            e.classList.toggle("active");
-            document.querySelectorAll(".fs-games__item").forEach(function(element){
-                if(enlarge == true){
+        let enlarge = false;
+        e.querySelector('img').addEventListener("click", function(){
+            if(enlarge == false){
+                e.classList.toggle("active");
+                document.querySelectorAll(".fs-games__item").forEach(function(element){
                     if(element.classList.contains("active")){
                         document.querySelector(".fs-games").style.transform = "translate(-10%)"
                         element.classList.remove("hovered");
-                        element.style.width = "100vw";
-                        element.querySelector("img").style.transform = "skewX(0) translate(-50%, -50%)";
-                        element.querySelector("img").style.filter = "grayscale(0)";
-                        element.querySelector(".title").style.opacity = "100%";
-                        element.querySelector(".title").style.filter = "grayscale(0)";
-                        element.querySelector(".title").style.transform = "skewX(0) translateY(-50%) scale(1.3)";
-                        element.querySelector(".title").style.top = "40%";
-                        element.querySelector(".title").style.left = "8%";
-                        if(element.classList.contains("game1")){
-                            element.style.transform = "skewX(0) translate(19.58%)";
-                            element.querySelector("img").style.transform = "translate(-50%, -50%)"
-                        }
-                        else if(element.classList.contains("game2")){
-                            element.style.transform = "skewX(0) translate(-4.38%)";
-                            element.querySelector("img").style.transform = "translate(-50%, -50%)"
-                        }
-                        else if(element.classList.contains("game3")){
-                            element.style.transform = "skewX(0) translate(-28.38%)";
-                            element.querySelector("img").style.transform = "translate(-50%, -50%)"
-                        }
-                        else if(element.classList.contains("game4")){
-                            element.style.transform = "skewX(0) translate(-52.38%)";
-                            element.querySelector("img").style.transform = "translate(-50%, -50%)"
-                        }
-                        else if(element.classList.contains("game5")){
-                            element.style.transform = "skewX(0) translate(-76.38%)";
-                            element.querySelector("img").style.transform = "translate(-50%, -50%)"
-                        }
-                        enlarge = false;
+                        setTimeout(function(){
+                            element.querySelector(".fs-games__item__close").style.display = "block";
+                        }, 200);
+                        element.classList.add('large');
+                        enlarge = true;
                     }else{
                         element.style.opacity = "0";
                     }
+                });
+            }
+        })
+        e.querySelector(".fs-games__item__close").addEventListener('click', function(){
+            document.querySelectorAll(".fs-games__item").forEach(function(element){
+                if(element.classList.contains("active")){
+                    document.querySelector(".fs-games").style.transform = "translateX(-10%)";
+                    element.querySelector(".fs-games__item__close").style.display = "none";
+                    element.classList.remove("large");
+                    element.classList.remove("active");
+                    element.classList.add("hovered");
+                }else{
+                    enlarge = false;
+                    element.style.opacity = "1";
                 }
             });
-        })
+        });
         e.addEventListener("mouseenter", function(){
             if(!e.classList.contains("active")){
                 if(e.classList.contains("game1")){
