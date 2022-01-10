@@ -352,29 +352,35 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    background: rgba(255, 255, 255, 0.5);
 
     &__socials{
         display: flex;
         justify-content: space-between;
         width: 150px;
+
+        & > a{
+            & > svg{
+                fill: #FFF;
+            }
+            
+        }
     }
     &__credits{
         font-size: 17px;
         letter-spacing: -1px;
-        color: #000;
+        color: #FFF;
         & > a{
-            color: #000;
-            font-weight: 700;
+            color: #FFF;
+            font-weight: 500;
             text-decoration: underline;
         }
     }
     &__inspiration{
         font-size: 17px;
-        color: #000;
+        color: #FFF;
         & > a{
-            color: #000;
-            font-weight: 700;
+            color: #FFF;
+            font-weight: 500;
             text-decoration: underline;
         }
     }

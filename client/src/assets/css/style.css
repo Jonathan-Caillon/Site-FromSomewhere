@@ -455,7 +455,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .fs-footer__socials {
@@ -468,26 +467,30 @@ body {
   width: 150px;
 }
 
+.fs-footer__socials > a > svg {
+  fill: #FFF;
+}
+
 .fs-footer__credits {
   font-size: 17px;
   letter-spacing: -1px;
-  color: #000;
+  color: #FFF;
 }
 
 .fs-footer__credits > a {
-  color: #000;
-  font-weight: 700;
+  color: #FFF;
+  font-weight: 500;
   text-decoration: underline;
 }
 
 .fs-footer__inspiration {
   font-size: 17px;
-  color: #000;
+  color: #FFF;
 }
 
 .fs-footer__inspiration > a {
-  color: #000;
-  font-weight: 700;
+  color: #FFF;
+  font-weight: 500;
   text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
