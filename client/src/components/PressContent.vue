@@ -3,7 +3,8 @@
   <div class="press-container">
 
     <div class="press-article" v-for="article in articles" :key="article.id">
-      <div class="article-body" @click="popModal">
+      <div class="article-body" @click="showModal">
+        <PressModal v-show="isModalVisible" @close="closeModal"/>
         <img  class="article-image" src="{{ article.image }}" alt="">
         <div class="article-txt">
           <div class="article-title">{{ article.title }} </div>
@@ -28,22 +29,29 @@
 </template>
 
 <script>
+
 import axios from 'axios';
+import PressModal from '@/components/PressModal.vue';
 
 const API = ('https://jsonplaceholder.typicode.com/posts');
 
 export default {
   name: "PressContent",
-    methods: {
-    popModal() {
-      
-    }
-  },
   components: {
+    PressModal,
   },
   data(){
     return {
-      articles: []
+      articles: [],
+      isModalVisible: false,
+    }
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
     }
   },
   created(){
