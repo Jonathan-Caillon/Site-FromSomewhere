@@ -6,31 +6,43 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  genre: {
+  body: {
     type: String,
     required: true,
   },
-  player: {
+  date: {
+    type: Date,
+    required: true,
+  },
+  imageName: {
     type: String,
     required: true,
   },
-  fileName: {
+  imagePath: {
     type: String,
     required: true,
   },
-  filePath: {
+  gameTitleName: {
     type: String,
     required: true,
   },
-  fileType: {
+  gameTitlePath: {
     type: String,
     required: true,
   },
-  fileSize: {
-    type: String,
-    required: true,
-  },
+  metacritique: [
+    {
+      author: {
+        type: String,
+        required: true,
+      },
+      body: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
-const Game = mongoose.model("Game", gameSchema);
+const Game = mongoose.model("Game", gameSchema, "game");
 module.exports = Game;

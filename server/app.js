@@ -25,6 +25,7 @@ app.set("view engine", "html");
 
 // Static folder
 app.use(express.static(__dirname + "/views/"));
+app.use(express.static(__dirname + "/uploads/"));
 
 app.use("/api", api);
 

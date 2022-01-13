@@ -2,6 +2,19 @@
   <router-view />
 </template>
 
+<script>
+export default {
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to) {
+        document.title = to.meta.title || "Some Default Title";
+      },
+    },
+  },
+};
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

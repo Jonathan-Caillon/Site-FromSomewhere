@@ -133,7 +133,6 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import "../assets/js/app.js";
-
 export default {
   name: "Home",
   components: {
