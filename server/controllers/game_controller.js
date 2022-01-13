@@ -1,20 +1,23 @@
 const Game = require("../models/game_schema");
 
-const createData = (req, res) => {
-  Game.create(req.body)
-    .then((data) => {
-      console.log("New Game Created!", data);
-      res.status(201).json(data);
-    })
-    .catch((err) => {
-      if (err.name === "ValidationError") {
-        console.error("Error Validating!", err);
-        res.status(422).json(err);
-      } else {
-        console.error(err);
-        res.status(500).json(err);
-      }
+const createData = async (req, res) => {
+  try {
+    console.log(req.files);
+    console.log(req.body.gameBody);
+    const file = new Game({
+      title: req.body.title,
+      body: req.body.gameBody,
+      date: req.body.gameDate,
+      imageName: req.files.image[0].originalname,
+      imagePath: req.files.image[0].path,
+      gameTitleName: req.files.gameTitle[0].originalname,
+      gameTitlePath: req.files.gameTitle[0].path,
     });
+    await file.save();
+    res.status(201).send("File uploaded Successfully");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 };
 
 const readData = (req, res) => {
@@ -29,6 +32,7 @@ const readData = (req, res) => {
 };
 
 const updateData = (req, res) => {
+  console.log(req.body);
   Game.findByIdAndUpdate(req.params.id, req.body, {
     useFindAndModify: false,
     new: true,

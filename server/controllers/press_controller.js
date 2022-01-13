@@ -1,21 +1,41 @@
 const Press = require("../models/press_schema");
 
-const createData = (req, res) => {
-  Press.create(req.body)
-    .then((data) => {
-      console.log("New Press Created!", data);
-      res.status(201).json(data);
-    })
-    .catch((err) => {
-      if (err.name === "ValidationError") {
-        console.error("Error Validating!", err);
-        res.status(422).json(err);
-      } else {
-        console.error(err);
-        res.status(500).json(err);
-      }
+const createData = async (req, res) => {
+  try {
+    console.log(req.files);
+    console.log(req.body.title);
+    const file = new Press({
+      title: req.body.title,
+      body: req.body.pressBody,
+      excerpt: req.body.pressExcerpt,
+      date: req.body.pressDate,
+      imageName: req.files.image[0].originalname,
+      imagePath: req.files.image[0].path,
     });
+    await file.save();
+    res.status(201).send("File uploaded Successfully");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 };
+
+// const createData = (req, res) => {
+//   console.log(req.body);
+//   Press.create(req.body)
+//     .then((data) => {
+//       console.log("New Press Created!", data);
+//       res.status(201).json(data);
+//     })
+//     .catch((err) => {
+//       if (err.name === "ValidationError") {
+//         console.error("Error Validating!", err);
+//         res.status(422).json(err);
+//       } else {
+//         console.error(err);
+//         res.status(500).json(err);
+//       }
+//     });
+// };
 
 const readData = (req, res) => {
   Press.find()
