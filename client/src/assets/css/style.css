@@ -493,4 +493,70 @@ body {
   font-weight: 500;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 1000px) {
+  #app {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .fs-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .fs-header__logo {
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    margin: 10px;
+  }
+  .fs-header__navbar {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    background: #FFF;
+  }
+  .fs-header__navbar__nav__items:nth-child(2) {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+  .fs-header__navbar__nav__items {
+    color: #000;
+  }
+  .fs-games {
+    position: absolute;
+    top: 70%;
+    -webkit-transform: none;
+            transform: none;
+    height: 20%;
+  }
+  .fs-games > .game2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .fs-footer {
+    position: absolute;
+  }
+  .fs-footer__socials {
+    font-size: 17px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
