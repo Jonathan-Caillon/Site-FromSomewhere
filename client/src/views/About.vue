@@ -5,19 +5,17 @@
     <form @submit.prevent="postUser">
       <label for="nom">name</label>
       <input id="nom" type="text" v-model="nom" />
-      <label for="age">age</label>
-      <input id="age" type="text" v-model="age" />
-      <label for="age">Player</label>
-      <input id="age" type="text" v-model="player" />
-      <input type="file" v-model="image" />
-      <button type="submit">Submit</button>
     </form>
   </div>
+  <PageFooter />
 </template>
 
 <script>
+import PageFooter from "@/components/PageFooter.vue";
+
 const axios = require("axios");
 export default {
+  components: { PageFooter },
   data() {
     return {
       title: "Test du titre",
