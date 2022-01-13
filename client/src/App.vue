@@ -1,9 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/Press">Press</router-link>
-  </div>
   <router-view />
 </template>
 
@@ -21,33 +16,21 @@ export default {
 </script>
 
 <style>
-
-body {
-  font-family: "ErasUltra";
-  height: 100vh;
-  margin: 0;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
 #nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 20vw;
-  height: 100vh;
-  padding-top: 5vh;
-  z-index: 9;
-  background-color: rgb(24, 24, 24);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  padding: 30px;
 }
 
 #nav a {
   font-weight: bold;
-  font-size: 2rem;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 10vh;
+  color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
