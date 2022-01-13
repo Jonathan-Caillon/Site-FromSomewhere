@@ -1,0 +1,452 @@
+@font-face {
+    font-family: 'ITC Eras Ultra BT';
+    src: url(../fonts/ITC_Eras_Ultra_BT.otf);
+}
+
+:root{
+    // FONTS
+    --logo: 'ITC Eras Ultra BT', arial, sans-serif;
+    --quotes: 'Adobe Garamond', arial, sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+    // NAVBAR
+
+.fs-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 200px;
+    pointer-events: none;
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        font-family: var(--logo);
+        font-size: 35px;
+        letter-spacing: -2.5px;
+        pointer-events: none;
+
+        & > span{
+            margin-left: 5px;
+        }
+    }
+    &__navbar{
+        width: 25%;
+        height: 100%;
+        &__nav{
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &__items{
+                pointer-events: all;
+                padding: 5px 10px;
+                font-size: 18px;
+                color: #FFF;
+                transition: .3s;
+                
+                &:hover{
+                    transform: scale(1.1);
+                    transition: .3s;
+                }
+            }
+        }
+    }
+
+}
+
+    // GAMES
+
+.fs-games{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    transform: translateX(-10%);
+
+    &__item{
+        width: calc(100vw * 1.2 / 5);
+        height: 100%;
+        transform: skewX(-20deg);
+        transition: .5s !important;
+        overflow: hidden;
+
+        &.large{
+            width: 100vw;
+
+            & > img{
+                transform: skewX(0deg) translate(-50%, -50%) !important;
+                filter: grayscale(0);
+            }
+            & > .title{
+                top: 40% !important;
+                left: 8% !important;
+                opacity: 100%;
+                filter: grayscale(0);
+                transform: skewX(0) translateY(-50%) scale(1.3) !important;
+            }
+            & > ul{
+                opacity: 1;
+            }
+        }
+        & > img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            transform: skewX(20deg) translate(-50%, -50%);
+            filter: grayscale(100%);
+            transition: .5s;
+        }
+        & .title{
+            opacity: 0;
+            transform: skewX(20deg) translate(-50%, -50%);
+            width: 600px;
+            pointer-events: none;
+        }
+        &__desc{
+            position: fixed;
+            bottom: 5%;
+            right: 7%;
+            padding: 20px 30px;
+            width: 400px;
+            height: auto;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%);
+            transition: .5s;
+            opacity: 0;
+            color: #FFF;
+            font-size: 17px;
+            text-align: justify;
+            text-shadow: 1px 1px 5px #000;
+            backdrop-filter: blur(3px);
+            pointer-events: none;
+            & > span{
+                margin: -9px 0 0 -9px;
+                padding: 0 10px;
+                float: left;
+                font-size: 60px;
+            }
+        }
+        &__close{
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%) scale(2);
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            & > svg{
+                fill: #FFF;
+            }
+        }
+        &__meta{
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+
+            & > li{
+                position: absolute;
+                color: #FFF;
+                font-family: var(--quotes);
+                width: auto;
+                max-width: 250px;
+                font-size: 28px;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                & > span{
+                    font-size: 20px;
+                    opacity: .8;
+                }
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateX(-50%);
+                    height: 100%;
+                    width: 100px;
+                    background-image: url(../svg/left.svg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transform: translateX(50%);
+                    height: 100%;
+                    width: 100px;
+                    background-image: url(../svg/right.svg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            & > .meta1{
+                bottom: 10%;
+                left: 5%;
+            }
+            & > .meta2{
+                bottom: 25%;
+                left: 20%;
+            }
+            & > .meta3{
+                bottom: 35%;
+                left: 75%;
+            }
+            & > .meta4{
+                bottom: 20%;
+                left: 50%;
+            }
+            & > .meta5{
+                bottom: 70%;
+                left: 70%;
+            }
+            & > .meta6{
+                bottom: 60%;
+                left: 35%;
+            }
+        }
+    }
+    & .game1{
+        & > img{
+            transform: skewX(20deg) translate(-35%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-25%, -50%);
+        }
+        &.large{
+            transform: skewX(0) translate(19.58%);
+            & > img{
+                transform: translate(-50%, -50%);
+            }
+            & > .title{
+                top: 50% !important;
+                left: 50% !important;
+                transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
+            }
+        }
+
+    }
+    & .game2{
+        & > img{
+            transform: skewX(20deg) translate(-50%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-40%, -50%);
+        } 
+        &.large{
+            transform: skewX(0) translate(-4.38%);
+        }
+
+    }
+    & .game3{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-47%, -50%);
+        } 
+        &.large{
+            transform: skewX(0) translate(-28.38%);
+        }
+
+    }
+    & .game4{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-40%, -50%);
+        }
+        &.large{
+            transform: skewX(0) translate(-52.38%);
+        } 
+
+    }
+    & .game5{
+        & > img{
+            transform: skewX(20deg) translate(-40%, -50%);
+        }
+        & > .title{
+            transform: skewX(20deg) translate(-45%, -50%);
+        } 
+        &.large{
+            transform: skewX(0) translate(-76.38%);
+            & > img{
+                transform: translate(-50%, -50%);
+            }
+            & > .title{
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+        }
+    }
+    & .hovered{
+        width: calc((100vw * 1.2 / 5) * 1.5);
+        transition: .3s;
+
+        & > img{
+            filter: grayscale(0%);
+        }
+        & .title{
+            opacity: 1;
+        }
+    }
+    & .active{
+        z-index: 10;
+
+        & .fs-games__item__desc{
+            transition: 1s;
+            opacity: 1;
+        }
+    }
+    &__item:nth-child(odd){
+        background-color: black;
+    }
+    &__item:nth-child(even){
+        background-color: grey;
+    }
+}
+
+.fs-footer{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    &__socials{
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+
+        & > a{
+            & > svg{
+                fill: #FFF;
+            }
+            
+        }
+    }
+    &__credits{
+        font-size: 17px;
+        letter-spacing: -1px;
+        color: #FFF;
+        & > a{
+            color: #FFF;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+    &__inspiration{
+        font-size: 17px;
+        color: #FFF;
+        & > a{
+            color: #FFF;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #app{
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .fs-header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 100vh;
+        align-items: flex-start;
+
+        &__logo{
+            top: 0;
+            left: 0;
+            font-size: 25px;
+            margin: 10px;
+        }
+        &__navbar{
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 50px;
+            background: #FFF;
+
+            &__nav{
+                &__items:nth-child(2){
+                    border-left: 1px solid #000;
+                    border-right: 1px solid #000;
+                }
+                &__items{
+                    color: #000;
+                }
+            }
+        }
+    }
+    .fs-games{
+        position: absolute;
+        top: 70%;
+        transform: none;
+        height: 20%;
+
+        & > .game2{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 70%;
+            width: 100%;
+            transform: none;
+        }
+    }
+    .fs-footer{
+        position: absolute;
+        &__socials{
+            font-size: 17px;
+        }
+    }
+}
