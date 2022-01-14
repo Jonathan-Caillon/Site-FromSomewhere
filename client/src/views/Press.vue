@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="press-head">
     <PageTitle pageName="Press Release" />
     <PressHeader />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue';
 import PageFooter from "@/components/PageFooter.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import PressHeader from "@/components/PressHeader.vue";
@@ -20,6 +22,7 @@ export default {
     PageTitle,
     PressHeader,
     PressBody,
+    Navbar,
   }
 };
 </script>
