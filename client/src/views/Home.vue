@@ -25,7 +25,7 @@
       </ul>
     </nav>
   </header>
-  <div class="wrapper">
+  <div class="fs-wrapper">
     <section class="fs-games">
       <div class="fs-games__item game1">
         <img src="../assets/img/ADIBOU.png" alt="" draggable="false">

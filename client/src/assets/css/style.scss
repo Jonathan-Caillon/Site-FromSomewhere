@@ -15,12 +15,6 @@
     list-style: none;
     text-decoration: none;
 }
-body{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #000;
-}
 
     // NAVBAR
 
@@ -77,13 +71,22 @@ body{
 }
 
     // GAMES
-
+.fs-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
 .fs-games{
     width: auto;
     height: 100%;
     position: absolute;
     display: flex;
     transform: translateX(-10%);
+    background: #000;
 
     &__item{
         width: calc(100vw * 1.2 / 5);
@@ -313,17 +316,6 @@ body{
             }
         }
     }
-    & .hovered{
-        width: calc((100vw * 1.2 / 5) * 1.5);
-        transition: .3s;
-
-        & > img{
-            filter: grayscale(0%);
-        }
-        & .title{
-            opacity: 1;
-        }
-    }
     & .active{
         z-index: 10;
 
@@ -385,16 +377,86 @@ body{
         }
     }
 }
+@media screen and (min-width: 1000px) {
+    .fs-games{
+        & > .hovered{
+            width: calc((100vw * 1.2 / 5) * 1.5);
+            transition: .3s;
+    
+            & > img{
+                filter: grayscale(0%);
+            }
+            & .title{
+                opacity: 1;
+            }
+        }
+    } 
+
+//     .hovered.game1 + .fs-games__item{
+//         transform: translateX(-7%);
+//     }
+//     .hovered.game2 + .fs-games__item{
+//         transform: translateX(-8.5%);
+//     }
+//     .hovered.game4 + .fs-games__item{
+//         transform: translateX(-12.5%);
+//     }
+//     .hovered.game5 + .fs-games__item{
+//         transform: translateX(-15%);
+//     }
+}
 @media screen and (max-width: 1000px) {
-    .mobile{
-        display: none;
-    }
-    .wrapper{
+    .fs-wrapper{
         position: relative;
         width: 100vw;
         height: 100vh;
         overflow-y: scroll;
         overflow-x: hidden;
+
+        & > .enlarged{
+            top: 0;
+            height: calc(100vh - 200px) !important;
+            width: 100%;
+            transform: none !important;
+
+            & > .active{
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: none;
+                height: calc(100vh - 200px);
+                object-fit: cover;
+
+                & > img{
+                    object-fit: cover;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                & > .title{
+                    width: 90%;
+                    object-fit: contain;
+                    top: 50% !important;
+                    left: 50% !important;
+                    transform: translate(-50%, -50%) !important;
+                }
+                & > .fs-games__item{
+                    &__desc{
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        transform: none;
+                    }
+                    &__meta{
+                        display: none;
+                    }
+                    &__close{
+                        top: 5%;
+                        right: 20px;
+                    }
+                }
+            }
+        }
     }
     .fs-header{
         position: absolute;
@@ -457,6 +519,9 @@ body{
         width: 400vw;
         overflow: hidden;
 
+        .mobile{
+            display: none;
+        }
         & > .game2{
             position: fixed;
             top: 0;
