@@ -2,6 +2,7 @@
   <div class="about">
     <h1>Game content</h1>
     <!-- Form post Game -->
+    <img src="..\assets\img\2022-01-13T13-32-38.647Z-NUTNUT.png" alt="" />
     <form
       @submit.prevent="postUser"
       enctype="multipart/form-data"
@@ -54,6 +55,7 @@
       <p><input id="postPress" type="submit" value="Submit" /></p>
     </form>
     <br />
+
     <!-- Metacritique -->
     <form @submit.prevent="postMeta">
       <label for="metacritique">Metacritique</label>
