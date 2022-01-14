@@ -2,7 +2,7 @@ const multer = require("multer");
 const Game = require("../models/game_schema");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads");
+    cb(null, "../client/src/assets/img");
   },
   filename: (req, file, cb) => {
     cb(
