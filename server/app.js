@@ -25,13 +25,12 @@ app.set("view engine", "html");
 
 // Static folder
 app.use(express.static(__dirname + "/views/"));
-app.use(express.static(__dirname + "/uploads/"));
 
 app.use("/api", api);
 
-app.use((req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
-});
+// app.use((req, res) => {
+//   res.sendFile(__dirname + "/views/index.html");
+// });
 
 app.listen(port);
 module.exports = app;
