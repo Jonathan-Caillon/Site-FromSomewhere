@@ -1,27 +1,20 @@
 @font-face {
-  font-family: 'ITC Eras Ultra BT';
+  font-family: "ITC Eras Ultra BT";
   src: url(../fonts/ITC_Eras_Ultra_BT.otf);
 }
 
 :root {
-  --logo: 'ITC Eras Ultra BT', arial, sans-serif;
-  --quotes: 'Adobe Garamond', arial, sans-serif;
+  --logo: "ITC Eras Ultra BT", arial, sans-serif;
+  --quotes: "Adobe Garamond", arial, sans-serif;
 }
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
 }
 
 .fs-header {
@@ -29,17 +22,17 @@ body {
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 90%;
   height: 200px;
   pointer-events: none;
@@ -50,9 +43,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #FFF;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
   font-family: var(--logo);
   font-size: 35px;
   letter-spacing: -2.5px;
@@ -74,26 +67,26 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .fs-header__navbar__nav__items {
   pointer-events: all;
   padding: 5px 10px;
   font-size: 18px;
-  color: #FFF;
-  -webkit-transition: .3s;
-  transition: .3s;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-header__navbar__nav__items:hover {
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: .3s;
-  transition: .3s;
+  transform: scale(1.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-games {
@@ -104,16 +97,16 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-transform: translateX(-10%);
-          transform: translateX(-10%);
+  transform: translateX(-10%);
 }
 
 .fs-games__item {
   width: calc(100vw * 1.2 / 5);
   height: 100%;
   -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg);
-  -webkit-transition: .5s !important;
-  transition: .5s !important;
+  transform: skewX(-20deg);
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
   overflow: hidden;
 }
 
@@ -123,9 +116,9 @@ body {
 
 .fs-games__item.large > img {
   -webkit-transform: skewX(0deg) translate(-50%, -50%) !important;
-          transform: skewX(0deg) translate(-50%, -50%) !important;
+  transform: skewX(0deg) translate(-50%, -50%) !important;
   -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .fs-games__item.large > .title {
@@ -133,9 +126,9 @@ body {
   left: 8% !important;
   opacity: 100%;
   -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
   -webkit-transform: skewX(0) translateY(-50%) scale(1.3) !important;
-          transform: skewX(0) translateY(-50%) scale(1.3) !important;
+  transform: skewX(0) translateY(-50%) scale(1.3) !important;
 }
 
 .fs-games__item.large > ul {
@@ -148,17 +141,17 @@ body {
   left: 50%;
   width: 100vw;
   -webkit-transform: skewX(20deg) translate(-50%, -50%);
-          transform: skewX(20deg) translate(-50%, -50%);
+  transform: skewX(20deg) translate(-50%, -50%);
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-transition: .5s;
-  transition: .5s;
+  filter: grayscale(100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .fs-games__item .title {
   opacity: 0;
   -webkit-transform: skewX(20deg) translate(-50%, -50%);
-          transform: skewX(20deg) translate(-50%, -50%);
+  transform: skewX(20deg) translate(-50%, -50%);
   width: 600px;
   pointer-events: none;
 }
@@ -172,16 +165,16 @@ body {
   height: auto;
   background: rgba(255, 255, 255, 0.2);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: .5s;
-  transition: .5s;
+  transform: translateY(-50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   opacity: 0;
-  color: #FFF;
+  color: #fff;
   font-size: 17px;
   text-align: justify;
   text-shadow: 1px 1px 5px #000;
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   pointer-events: none;
 }
 
@@ -198,7 +191,7 @@ body {
   top: 50%;
   right: 5%;
   -webkit-transform: translateY(-50%) scale(2);
-          transform: translateY(-50%) scale(2);
+  transform: translateY(-50%) scale(2);
   width: 24px;
   height: 24px;
   border: none;
@@ -207,19 +200,19 @@ body {
 }
 
 .fs-games__item__close > svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .fs-games__item__meta {
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-games__item__meta > li {
   position: absolute;
-  color: #FFF;
+  color: #fff;
   font-family: var(--quotes);
   width: auto;
   max-width: 250px;
@@ -230,24 +223,24 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .fs-games__item__meta > li > span {
   font-size: 20px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .fs-games__item__meta > li:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   height: 100%;
   width: 100px;
   background-image: url(../svg/left.svg);
@@ -257,12 +250,12 @@ body {
 }
 
 .fs-games__item__meta > li:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  transform: translateX(50%);
   height: 100%;
   width: 100px;
   background-image: url(../svg/right.svg);
@@ -303,112 +296,112 @@ body {
 
 .fs-games .game1 > img {
   -webkit-transform: skewX(20deg) translate(-35%, -50%);
-          transform: skewX(20deg) translate(-35%, -50%);
+  transform: skewX(20deg) translate(-35%, -50%);
 }
 
 .fs-games .game1 > .title {
   -webkit-transform: skewX(20deg) translate(-25%, -50%);
-          transform: skewX(20deg) translate(-25%, -50%);
+  transform: skewX(20deg) translate(-25%, -50%);
 }
 
 .fs-games .game1.large {
   -webkit-transform: skewX(0) translate(19.58%);
-          transform: skewX(0) translate(19.58%);
+  transform: skewX(0) translate(19.58%);
 }
 
 .fs-games .game1.large > img {
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .fs-games .game1.large > .title {
   top: 50% !important;
   left: 50% !important;
   -webkit-transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
-          transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
+  transform: skewX(0) translate(-50%, -50%) scale(1.3) !important;
 }
 
 .fs-games .game2 > img {
   -webkit-transform: skewX(20deg) translate(-50%, -50%);
-          transform: skewX(20deg) translate(-50%, -50%);
+  transform: skewX(20deg) translate(-50%, -50%);
 }
 
 .fs-games .game2 > .title {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
-          transform: skewX(20deg) translate(-40%, -50%);
+  transform: skewX(20deg) translate(-40%, -50%);
 }
 
 .fs-games .game2.large {
   -webkit-transform: skewX(0) translate(-4.38%);
-          transform: skewX(0) translate(-4.38%);
+  transform: skewX(0) translate(-4.38%);
 }
 
 .fs-games .game3 > img {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
-          transform: skewX(20deg) translate(-40%, -50%);
+  transform: skewX(20deg) translate(-40%, -50%);
 }
 
 .fs-games .game3 > .title {
   -webkit-transform: skewX(20deg) translate(-47%, -50%);
-          transform: skewX(20deg) translate(-47%, -50%);
+  transform: skewX(20deg) translate(-47%, -50%);
 }
 
 .fs-games .game3.large {
   -webkit-transform: skewX(0) translate(-28.38%);
-          transform: skewX(0) translate(-28.38%);
+  transform: skewX(0) translate(-28.38%);
 }
 
 .fs-games .game4 > img {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
-          transform: skewX(20deg) translate(-40%, -50%);
+  transform: skewX(20deg) translate(-40%, -50%);
 }
 
 .fs-games .game4 > .title {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
-          transform: skewX(20deg) translate(-40%, -50%);
+  transform: skewX(20deg) translate(-40%, -50%);
 }
 
 .fs-games .game4.large {
   -webkit-transform: skewX(0) translate(-52.38%);
-          transform: skewX(0) translate(-52.38%);
+  transform: skewX(0) translate(-52.38%);
 }
 
 .fs-games .game5 > img {
   -webkit-transform: skewX(20deg) translate(-40%, -50%);
-          transform: skewX(20deg) translate(-40%, -50%);
+  transform: skewX(20deg) translate(-40%, -50%);
 }
 
 .fs-games .game5 > .title {
   -webkit-transform: skewX(20deg) translate(-45%, -50%);
-          transform: skewX(20deg) translate(-45%, -50%);
+  transform: skewX(20deg) translate(-45%, -50%);
 }
 
 .fs-games .game5.large {
   -webkit-transform: skewX(0) translate(-76.38%);
-          transform: skewX(0) translate(-76.38%);
+  transform: skewX(0) translate(-76.38%);
 }
 
 .fs-games .game5.large > img {
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .fs-games .game5.large > .title {
   top: 50% !important;
   left: 50% !important;
   -webkit-transform: translate(-50%, -50%) !important;
-          transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 .fs-games .hovered {
   width: calc((100vw * 1.2 / 5) * 1.5);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-games .hovered > img {
   -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 .fs-games .hovered .title {
@@ -438,7 +431,7 @@ body {
   left: 50%;
   bottom: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 100%;
   height: 100px;
   padding: 2%;
@@ -447,14 +440,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .fs-footer__socials {
@@ -462,34 +455,34 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 150px;
 }
 
 .fs-footer__socials > a > svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .fs-footer__credits {
   font-size: 17px;
   letter-spacing: -1px;
-  color: #FFF;
+  color: #fff;
 }
 
 .fs-footer__credits > a {
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   text-decoration: underline;
 }
 
 .fs-footer__inspiration {
   font-size: 17px;
-  color: #FFF;
+  color: #fff;
 }
 
 .fs-footer__inspiration > a {
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   text-decoration: underline;
 }
@@ -506,12 +499,12 @@ body {
     top: 0;
     left: 0;
     -webkit-transform: none;
-            transform: none;
+    transform: none;
     width: 100%;
     height: 100vh;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
   .fs-header__logo {
     top: 0;
@@ -524,10 +517,10 @@ body {
     left: 50%;
     bottom: 0;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     width: 100%;
     height: 50px;
-    background: #FFF;
+    background: #fff;
   }
   .fs-header__navbar__nav__items:nth-child(2) {
     border-left: 1px solid #000;
@@ -540,7 +533,7 @@ body {
     position: absolute;
     top: 70%;
     -webkit-transform: none;
-            transform: none;
+    transform: none;
     height: 20%;
   }
   .fs-games > .game2 {
@@ -550,7 +543,7 @@ body {
     height: 70%;
     width: 100%;
     -webkit-transform: none;
-            transform: none;
+    transform: none;
   }
   .fs-footer {
     position: absolute;
