@@ -9,7 +9,7 @@ const createData = async (req, res) => {
       body: req.body.pressBody,
       excerpt: req.body.pressExcerpt,
       date: req.body.pressDate,
-      imageName: req.files.image[0].originalname,
+      imageName: req.files.image[0].filename,
       imagePath: req.files.image[0].path,
     });
     await file.save();
