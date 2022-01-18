@@ -2,10 +2,10 @@
 
   <div class="press-container">
 
-    <div class="press-article" v-for="article in articles" :key="article.id">
-      <div class="article-body" @click="showModal">
-        <PressModal v-show="isModalVisible" @close="closeModal"/>
-        <img  class="article-image" src="{{ article.image }}" alt="">
+    <div class="press-article" v-for="article in articles" :key="article.id" @click="toggleModal">
+      <div class="articleBody" @click="showModal">
+        <PressModal :reveal="reveal" :toggleModal="toggleModal" />
+        <img class="article-image" :src="`/src/assets/img/`+ article.imageName" alt="">
         <div class="article-txt">
           <div class="article-title">{{ article.title }} </div>
           <div class="article-excerpt">{{ article.excerpt }}</div>
@@ -13,14 +13,6 @@
       </div>
 
       <!-- MODAL -->
-
-      <div class="modal-body">
-        <img  class="modal-image" src="{{ article.image }}" alt="">
-        <div class="modal-txt">
-          <div class="modal-title">{{ article.title }} </div>
-          <div class="modal-article">{{ article.body }}</div>
-        </div>
-      </div>
 
     </div> 
 
@@ -33,7 +25,7 @@
 import axios from 'axios';
 import PressModal from '@/components/PressModal.vue';
 
-const API = ('https://jsonplaceholder.typicode.com/posts');
+const API = '/api/press/';
 
 export default {
   name: "PressContent",
@@ -43,16 +35,13 @@ export default {
   data(){
     return {
       articles: [],
-      isModalVisible: false,
+      reveal: false,
     }
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
+    toggleModal: function(){
+      this.reveal = !this.reveal
     },
-    closeModal() {
-      this.isModalVisible = false;
-    }
   },
   created(){
     axios.get(API)
@@ -65,6 +54,8 @@ export default {
       })
   }
 }
+
+// MODAL
 
 
 
@@ -95,18 +86,5 @@ export default {
 
 /* MODAL */
 
-.modal-body{
-  display: none;
-}
-
-.modal-body-on{
-  z-index: 10;
-  position: absolute;
-  top: 5vh;
-  left: 5vw;
-  height: 90vh;
-  width: 90vw;
-  cursor: pointer;
-}
 
 </style>
