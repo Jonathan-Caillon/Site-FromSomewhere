@@ -8,9 +8,9 @@ const createData = async (req, res) => {
       title: req.body.title,
       body: req.body.gameBody,
       date: req.body.gameDate,
-      imageName: req.files.image[0].originalname,
+      imageName: req.files.image[0].filename,
       imagePath: req.files.image[0].path,
-      gameTitleName: req.files.gameTitle[0].originalname,
+      gameTitleName: req.files.gameTitle[0].filename,
       gameTitlePath: req.files.gameTitle[0].path,
     });
     await file.save();
