@@ -22,6 +22,7 @@ const createData = async (req, res) => {
 
 const readData = (req, res) => {
   Game.find()
+    .sort({ date: -1 })
     .then((data) => {
       res.status(200).json(data);
     })

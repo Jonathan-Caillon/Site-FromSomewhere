@@ -137,12 +137,7 @@ export default {
     axios
       .get("/api/game/")
       .then((response) => {
-        console.log(response.data[0].metacritique);
-
-        const test = document.querySelector("#tasks");
-        for (let i = 0; i < response.data[0].metacritique.length; i++) {
-          test.innerHTML += response.data[0].metacritique[i].author;
-        }
+        console.log(response.data);
       })
 
       .catch((error) => {
