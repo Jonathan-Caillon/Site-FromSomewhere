@@ -57,23 +57,23 @@
     <br />
 
     <!-- Metacritique -->
-    <form @submit.prevent="postMeta">
+    <!-- <form @submit.prevent="postMeta">
       <label for="metacritique">Metacritique</label>
       <br />
       <input type="text" v-model="metacritique" />
       <br />
       <button type="submit">Submit</button>
-    </form>
+    </form> -->
     <br />
     <div class="meta">
       <header class="metaheader">
         <h1>Metacritique</h1>
-        <form id="new-task-form">
+        <div id="new-task-form">
           <input
             type="text"
             name="new-author-input"
             id="new-author-input"
-            placeholder="author?"
+            placeholder="Author?"
           />
           <input
             type="text"
@@ -82,7 +82,7 @@
             placeholder="What do you have planned?"
           />
           <input type="submit" id="new-task-submit" value="Add task" />
-        </form>
+        </div>
       </header>
       <main>
         <section class="task-list">
@@ -103,6 +103,7 @@
 					</div>
 				</div> -->
           </div>
+          <button>Submit</button>
         </section>
       </main>
     </div>
@@ -143,12 +144,12 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-    const form = document.querySelector("#new-task-form");
+    const form = document.querySelector("#new-task-submit");
     const input = document.querySelector("#new-task-input");
     const author = document.querySelector("#new-author-input");
     const list_el = document.querySelector("#tasks");
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("click", (e) => {
       e.preventDefault();
 
       const task = input.value;
