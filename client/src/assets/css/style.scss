@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    height: 200px;
+    height: 15%;
     pointer-events: none;
 
     &__logo{
@@ -125,12 +125,12 @@
         & .title{
             opacity: 0;
             transform: skewX(20deg) translate(-50%, -50%);
-            width: 600px;
+            width: calc(30% + 200px);
             pointer-events: none;
         }
         &__desc{
             position: fixed;
-            bottom: 5%;
+            bottom: 10%;
             right: 7%;
             padding: 20px 30px;
             width: 400px;
@@ -156,7 +156,7 @@
             display: none;
             position: absolute;
             top: 50%;
-            right: 5%;
+            right: 3%;
             transform: translateY(-50%) scale(2);
             width: 24px;
             height: 24px;
@@ -168,6 +168,11 @@
             }
         }
         &__meta{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 65%;
+            height: 50%;
             opacity: 0;
             pointer-events: none;
             transition: .3s;
@@ -177,15 +182,15 @@
                 color: #FFF;
                 font-family: var(--quotes);
                 width: auto;
-                max-width: 250px;
-                font-size: 28px;
+                max-width: 15%;
+                font-size: 1.5vw;
                 height: 100px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
 
                 & > span{
-                    font-size: 20px;
+                    font-size: 1vw;
                     opacity: .8;
                 }
                 &:before{
@@ -216,28 +221,28 @@
                 }
             }
             & > .meta1{
-                bottom: 10%;
-                left: 5%;
+                bottom: 18%;
+                left: 7%;
             }
             & > .meta2{
-                bottom: 25%;
-                left: 20%;
+                top: 20%;
+                left: 10%;
             }
             & > .meta3{
-                bottom: 35%;
-                left: 75%;
+                bottom: 25%;
+                left: 40%;
             }
             & > .meta4{
                 bottom: 20%;
-                left: 50%;
+                left: 76%;
             }
             & > .meta5{
-                bottom: 70%;
-                left: 70%;
+                top: 20%;
+                left: 72%;
             }
             & > .meta6{
-                bottom: 60%;
-                left: 35%;
+                top: 12%;
+                left: 45%;
             }
         }
     }
@@ -324,6 +329,9 @@
             opacity: 1;
         }
     }
+    & > .hovered{
+        z-index: 50;
+    }
     &__item:nth-child(odd){
         background-color: black;
     }
@@ -338,11 +346,11 @@
     bottom: 0;
     transform: translateX(-50%);
     width: 100%;
-    height: 100px;
+    height: 170px;
     padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
 
     &__socials{
@@ -358,6 +366,7 @@
         }
     }
     &__credits{
+        margin-right: 10px;
         font-size: 17px;
         letter-spacing: -1px;
         color: #FFF;
@@ -368,6 +377,7 @@
         }
     }
     &__inspiration{
+        margin-right: 20px;
         font-size: 17px;
         color: #FFF;
         & > a{
@@ -515,7 +525,7 @@
         position: absolute;
         top: calc(80% - 200px);
         transform: none;
-        height: calc(20%);
+        height: 20%;
         width: 400vw;
         overflow: hidden;
 
