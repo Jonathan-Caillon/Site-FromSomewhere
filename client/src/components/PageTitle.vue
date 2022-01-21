@@ -21,12 +21,13 @@ export default{
 
 .title-bloc{
   padding-left: 5%;
+  margin-bottom: 10px;
 }
 
 .title-bloc h1 {
   font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .title-bloc h2 {

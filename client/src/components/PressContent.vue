@@ -1,16 +1,22 @@
 <template>
 
   <div class="press-container">
-
-    <div class="press-article" v-for="article in articles" :key="article.id">
-      <div class="articleBody">
-        <img class="article-image" :src="require('../assets/img/'+article.imageName)" alt="">
-        <div class="article-txt">
-          <div class="article-title">{{ article.title }}</div><br>
-          <div class="article-excerpt">{{ article.excerpt }}</div>
-          <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
+    <div class="press-nav">
+      <button @click="req2020">2020</button>
+      <button @click="req2021">2021</button>
+      <button @click="reqAll">TOUS</button>
+    </div>
+    <div class="articles-container">
+      <div class="press-article" v-for="article in articles" :key="article.id">
+        <div class="articleBody">
+          <img class="article-image" :src="require('../assets/img/'+article.imageName)" alt="">
+          <div class="article-txt">
+            <div class="article-title">{{ article.title }}</div><br>
+            <div class="article-excerpt">{{ article.excerpt }}</div>
+            <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
+          </div>
         </div>
-      </div>
+    </div>
       <!-- <div class="bloc-modal">
         <div class="overlay" @click="toggleModalOFF"></div>
         <div class="modal">
@@ -42,6 +48,28 @@ export default {
     }
   },
   methods: {
+    req2020: function(){
+      axios.get(API)
+      .then(response => {
+        this.articles = Object.values(response.data).filter((user) =>
+            user.date.includes(2020)
+          )
+      })
+    },
+    req2021: function(){
+      axios.get(API)
+      .then(response => {
+        this.articles = Object.values(response.data).filter((user) =>
+            user.date.includes(2021)
+          )
+      })
+    },
+    reqAll: function(){
+      axios.get(API)
+      .then(response => {
+        this.articles = response.data
+      })
+    }
     // toggleFull: function(){
     //   if (fullOn = false){
     //     this.innerHTML = '<div class="article-excerpt">{{ article.body }}</div>' ;
@@ -53,17 +81,16 @@ export default {
     // },
   },
   created(){
-    axios.get(API, { params: { year: "2020" } })
+    axios.get(API)
       .then(response => {
         this.articles = response.data
-        console.log(response)
       })
       .catch(error => {
         console.log(error)
       });
   },
   // mounted(){
-  //   // CHECK IF FOUND AND OFC NOT BECAUSE MOTHERF*CKIN' VUE DOESN'T ALLOW CLASSIC EVENTLISTENERS
+  //   // CHECK IF FOUND AND OFC NOT BECAUSE MOTHERF*CKIN' VUE
 
   //   let articleNumber = document.querySelectorAll('.article-txt').length ;
   //   console.log ("Nombre d'articles : " + articleNumber);
@@ -91,20 +118,45 @@ export default {
 
 <style scoped>
 
+.press-nav {
+  border-bottom: solid black 1px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  margin-right: 30px;
+  font-size: 1.5rem;
+}
+
 .press-container{
   height: 100%;
   width: 100%;
-  padding-left: 20px;
+}
+
+.articles-container{
+  width: 100%;
+  padding: 0 20%;
 }
 
 .articleBody{
-  display: flex;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .article-image{
-  height: 150px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+  margin-right: 50px;
 }
 
 .article-title{
@@ -114,16 +166,23 @@ export default {
 }
 
 .article-txt{
-  height: 150px;
-  width: calc(100% - 300px);
+  height: 100%;
+  width: calc(100% - 150px);
   flex-direction: column;
   margin-top: 10px;
-  padding-left: 10px;
+  padding: 0 20px;
 }
 
 .article-link{
   margin-top: 10px;
   text-align: right;
+}
+
+@media (max-width: 1050px){
+  button{
+    width: 100px;
+    margin-right: 15px;
+  }
 }
 
 @media (max-width: 850px){
@@ -136,10 +195,14 @@ export default {
   .articleBody{
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
   }
   .article-txt {
     width: 100%;
+  }
+  .article-image{
+    margin: 0;
   }
 }
 

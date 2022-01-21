@@ -4,10 +4,7 @@
         <div class="wrapper">
             <header>
                 <PageTitle pageName="Press Release" />
-                  <!-- <div class="press-head">
-                    <PressHeader />
-                  </div> -->
-                  <PressBody />
+                <PressBody />
             </header>
             <PageFooter />
         </div>
@@ -44,16 +41,20 @@ main{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 header{
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
+}
+
+@media (max-width: 750px){
+  .wrapper{
+    width: 100vw;
+  }
 }
 
 </style>
