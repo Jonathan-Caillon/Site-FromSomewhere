@@ -1,13 +1,19 @@
 const nodemailer = require("nodemailer");
-
+require("dotenv").config();
 const transporter = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
   port: 2525,
-
   auth: {
     user: process.env.USER,
     pass: process.env.PASS,
   },
+});
+transporter.verify(function (err, success) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Server is ready to take our message");
+  }
 });
 
 const createData = (req, res) => {
