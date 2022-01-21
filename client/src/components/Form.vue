@@ -6,11 +6,15 @@
         </div>
         <input v-model="email" type="text" placeholder="email">
         <textarea v-model="message" rows="20" placeholder="Message"></textarea>
+        <input type="submit" value="Envoyer">
     </form>
 </template>
 <style scoped>
     form {
         width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     form *{
         margin-top: 20px;
@@ -36,6 +40,12 @@
         border: none;
         background: #EFEFEF;
         color: #111;
+    }
+    form input[type=submit]{
+        height: 50px;
+        width: 150px;
+        cursor: pointer;
+        background: #CCC;
     }
     textarea::placeholder, input::placeholder{
         background: transparent;
