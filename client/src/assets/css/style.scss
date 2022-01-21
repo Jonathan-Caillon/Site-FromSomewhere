@@ -479,7 +479,7 @@
             bottom: 0;
             transform: translateX(-50%);
             width: 100%;
-            height: 50px;
+            height: 60px;
             background: #FFF;
 
             &__nav{
@@ -502,7 +502,7 @@
                 }
                 &__items{
                     width: calc(100vw / 3);
-                    height: 50px;
+                    height: 60px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
