@@ -34,9 +34,11 @@ footer {
   color: white;
   height: 15vh;
   width: 80vw;
-  position: fixed;
+  margin-left: 20vw;
+  margin-top: 50px;
+  /* position: fixed;
   bottom: 0;
-  right: 0;
+  right: 0; */
   display: flex;
   justify-content: space-evenly;
 }
