@@ -8,6 +8,7 @@
         <div class="article-txt">
           <div class="article-title">{{ article.title }}</div><br>
           <div class="article-excerpt">{{ article.excerpt }}</div>
+          <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
         </div>
       </div>
       <!-- <div class="bloc-modal">
@@ -91,25 +92,55 @@ export default {
 <style scoped>
 
 .press-container{
-  margin-left: 25vw;
+  height: 100%;
+  width: 100%;
+  padding-left: 20px;
 }
 
 .articleBody{
   display: flex;
-  margin-top: 2%;
+  margin-top: 20px;
 }
 
 .article-image{
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 200px;
+}
+
+.article-title{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .article-txt{
-  margin-left: 5%;
-  height: 100px;
+  height: 150px;
+  width: calc(100% - 300px);
   flex-direction: column;
-  cursor: pointer;
+  margin-top: 10px;
+  padding-left: 10px;
 }
 
+.article-link{
+  margin-top: 10px;
+  text-align: right;
+}
+
+@media (max-width: 850px){
+  .articleBody{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 750px){
+  .articleBody{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .article-txt {
+    width: 100%;
+  }
+}
 
 </style>

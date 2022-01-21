@@ -1,11 +1,17 @@
 <template>
-  <Navbar />
-  <div class="press-head">
-    <PageTitle pageName="Press Release" />
-    <PressHeader />
-  </div>
-  <PressBody />
-  <PageFooter />  
+    <main>
+        <Navbar />
+        <div class="wrapper">
+            <header>
+                <PageTitle pageName="Press Release" />
+                  <!-- <div class="press-head">
+                    <PressHeader />
+                  </div> -->
+                  <PressBody />
+            </header>
+            <PageFooter />
+        </div>
+    </main>
 </template>
 
 <script>
@@ -29,9 +35,25 @@ export default {
 
 <style scoped>
 
-.press-head{
-  margin-left: 20vw;
+main{
+  display: flex;
+}
+
+.wrapper{
   width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
 }
 
 </style>

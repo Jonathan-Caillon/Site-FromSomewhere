@@ -4,7 +4,6 @@
     <router-link to="/about">About</router-link>
     <router-link to="/Press">Press</router-link>
   </div>
-  <router-view />
 </template>
 
 <script>
@@ -19,13 +18,9 @@ export default{
 
 #nav {
   padding: 30px;
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 20vw;
   height: 100vh;
   padding-top: 5vh;
-  z-index: 9;
   background-color: rgb(24, 24, 24);
   display: flex;
   flex-direction: column;

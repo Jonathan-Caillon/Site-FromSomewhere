@@ -33,12 +33,8 @@ footer {
   background-color: black;
   color: white;
   height: 15vh;
-  width: 80vw;
-  margin-left: 20vw;
+  width: 100%;
   margin-top: 50px;
-  /* position: fixed;
-  bottom: 0;
-  right: 0; */
   display: flex;
   justify-content: space-evenly;
 }

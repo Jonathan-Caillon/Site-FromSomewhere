@@ -20,7 +20,7 @@ export default{
 <style scoped>
 
 .title-bloc{
-  padding-left: 5vw;
+  padding-left: 5%;
 }
 
 .title-bloc h1 {
