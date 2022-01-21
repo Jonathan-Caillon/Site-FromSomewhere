@@ -4,7 +4,7 @@
   <div class="overlay" @click="toggleModal"></div>
   <div class="modal">
     <button class="btn-modal" @click="toggleModal">exit</button>
-    <h2>content</h2>
+    <div class="modal-body">{{modalBody}}</div>
   </div>
 </div>
 
@@ -14,7 +14,11 @@
 
   export default {
     name: "PressModal",
-    props: ['reveal', 'toggleModal']
+    // props: ['reveal', 'toggleModal', 'modalBody']
+    props: {
+      reveal : Boolean,
+      toggleModal: Function,
+    }
   };
 
 </script>
