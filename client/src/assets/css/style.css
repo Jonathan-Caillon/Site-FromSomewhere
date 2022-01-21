@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'ITC Eras Ultra BT';
+  font-family: "ITC Eras Ultra BT";
   src: url(../fonts/ITC_Eras_Ultra_BT.otf);
 }
 
 :root {
-  --logo: 'ITC Eras Ultra BT', arial, sans-serif;
-  --quotes: 'Adobe Garamond', arial, sans-serif;
+  --logo: "ITC Eras Ultra BT", arial, sans-serif;
+  --quotes: "Adobe Garamond", arial, sans-serif;
 }
 
 * {
@@ -45,7 +45,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #FFF;
+  color: #fff;
   font-family: var(--logo);
   font-size: 35px;
   letter-spacing: -2.5px;
@@ -77,16 +77,16 @@
   pointer-events: all;
   padding: 5px 10px;
   font-size: 18px;
-  color: #FFF;
-  -webkit-transition: .3s;
-  transition: .3s;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-header__navbar__nav__items:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-wrapper {
@@ -116,8 +116,8 @@
   height: 100%;
   -webkit-transform: skewX(-20deg);
           transform: skewX(-20deg);
-  -webkit-transition: .5s !important;
-  transition: .5s !important;
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
   overflow: hidden;
 }
 
@@ -155,8 +155,8 @@
           transform: skewX(20deg) translate(-50%, -50%);
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .fs-games__item .title {
@@ -177,10 +177,10 @@
   background: rgba(255, 255, 255, 0.2);
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   opacity: 0;
-  color: #FFF;
+  color: #fff;
   font-size: 17px;
   text-align: justify;
   text-shadow: 1px 1px 5px #000;
@@ -211,7 +211,7 @@
 }
 
 .fs-games__item__close > svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .fs-games__item__meta {
@@ -222,13 +222,13 @@
   height: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .fs-games__item__meta > li {
   position: absolute;
-  color: #FFF;
+  color: #fff;
   font-family: var(--quotes);
   width: auto;
   max-width: 15%;
@@ -247,11 +247,11 @@
 
 .fs-games__item__meta > li > span {
   font-size: 1vw;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .fs-games__item__meta > li:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -266,7 +266,7 @@
 }
 
 .fs-games__item__meta > li:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -447,9 +447,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -466,18 +465,18 @@
 }
 
 .fs-footer__socials > a > svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .fs-footer__credits {
   margin-right: 10px;
   font-size: 17px;
   letter-spacing: -1px;
-  color: #FFF;
+  color: #fff;
 }
 
 .fs-footer__credits > a {
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   text-decoration: underline;
 }
@@ -485,11 +484,11 @@
 .fs-footer__inspiration {
   margin-right: 20px;
   font-size: 17px;
-  color: #FFF;
+  color: #fff;
 }
 
 .fs-footer__inspiration > a {
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   text-decoration: underline;
 }
@@ -497,8 +496,8 @@
 @media screen and (min-width: 1000px) {
   .fs-games > .hovered {
     width: calc((100vw * 1.2 / 5) * 1.5);
-    -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
   .fs-games > .hovered > img {
     -webkit-filter: grayscale(0%);
@@ -556,49 +555,14 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    -webkit-transform: none;
-            transform: none;
-  }
-  .fs-wrapper > .enlarged > .active > .fs-games__item__meta {
-    display: none;
-  }
-  .fs-wrapper > .enlarged > .active > .fs-games__item__close {
-    top: 5%;
-    right: 20px;
-  }
-  .fs-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transform: none;
-            transform: none;
-    width: 100%;
-    height: 100vh;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .fs-header__logo {
-    top: 0;
-    left: 0;
-    font-size: 25px;
-    margin: 10px;
-  }
-  .fs-header__navbar {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 100%;
     height: 60px;
-    background: #FFF;
+    background: #fff;
   }
-  .fs-header__navbar__nav > *:nth-child(2) > li {
+  .fs-wrapper > .enlarged > .active > .fs-games__item__desc__nav > *:nth-child(2) > li {
     position: relative;
   }
-  .fs-header__navbar__nav > *:nth-child(2) > li:after {
-    content: '';
+  .fs-wrapper > .enlarged > .active > .fs-games__item__desc__nav > *:nth-child(2) > li:after {
+    content: "";
     position: absolute;
     top: 50%;
     left: 0;
@@ -610,7 +574,7 @@
     border-right: 1px solid #000;
     pointer-events: none;
   }
-  .fs-header__navbar__nav__items {
+  .fs-wrapper > .enlarged > .active > .fs-games__item__desc__nav__items {
     width: calc(100vw / 3);
     height: 60px;
     display: -webkit-box;
@@ -624,7 +588,65 @@
             align-items: center;
     color: #000;
   }
-  .fs-games {
+  .fs-wrapper .fs-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .fs-wrapper .fs-header__logo {
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    margin: 10px;
+  }
+  .fs-wrapper .fs-header__navbar {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    background: #fff;
+  }
+  .fs-wrapper .fs-header__navbar__nav > *:nth-child(2) > li {
+    position: relative;
+  }
+  .fs-wrapper .fs-header__navbar__nav > *:nth-child(2) > li:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    height: 50%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    pointer-events: none;
+  }
+  .fs-wrapper .fs-header__navbar__nav__items {
+    width: calc(100vw / 3);
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #000;
+  }
+  .fs-wrapper .fs-games {
     position: absolute;
     top: calc(80% - 200px);
     -webkit-transform: none;
@@ -633,10 +655,10 @@
     width: 400vw;
     overflow: hidden;
   }
-  .fs-games .mobile {
+  .fs-wrapper .fs-games .mobile {
     display: none;
   }
-  .fs-games > .game2 {
+  .fs-wrapper .fs-games > .game2 {
     position: fixed;
     top: 0;
     left: 0;
@@ -647,21 +669,21 @@
     -webkit-animation: none !important;
             animation: none !important;
   }
-  .fs-games > .game2 > img {
+  .fs-wrapper .fs-games > .game2 > img {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .fs-games > .game2 > .title {
+  .fs-wrapper .fs-games > .game2 > .title {
     top: 62%;
     width: 95%;
     -o-object-fit: contain;
        object-fit: contain;
   }
-  .fs-games > .game5 > .title {
+  .fs-wrapper .fs-games > .game5 > .title {
     width: 35%;
   }
-  .fs-games__item {
+  .fs-wrapper .fs-games__item {
     width: 100vw;
     position: relative;
     overflow: hidden;
@@ -674,25 +696,25 @@
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
   }
-  .fs-games__item > img {
+  .fs-wrapper .fs-games__item > img {
     -webkit-transform: translate(-50%, -50%) !important;
             transform: translate(-50%, -50%) !important;
     -webkit-filter: none;
             filter: none;
   }
-  .fs-games__item > .title {
+  .fs-wrapper .fs-games__item > .title {
     width: 70%;
     opacity: 1;
   }
-  .fs-games__item > .desc {
+  .fs-wrapper .fs-games__item > .desc {
     width: 100%;
     bottom: 200px;
   }
-  .fs-games__item.large > img {
+  .fs-wrapper .fs-games__item.large > img {
     width: 100vw;
     height: calc(100vh - 50px);
   }
-  .fs-footer {
+  .fs-wrapper .fs-footer {
     position: absolute;
     bottom: 50px;
     display: -webkit-box;
@@ -711,86 +733,152 @@
     height: 150px;
     background: #000;
   }
-  .fs-footer__socials {
+  .fs-wrapper .fs-footer__socials {
     font-size: 15px;
   }
+  @-webkit-keyframes carousel {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    25% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    35% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    50% {
+      -webkit-transform: translateX(-200%);
+              transform: translateX(-200%);
+    }
+    60% {
+      -webkit-transform: translateX(-200%);
+              transform: translateX(-200%);
+    }
+    75% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    85% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @keyframes carousel {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    25% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    35% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    50% {
+      -webkit-transform: translateX(-200%);
+              transform: translateX(-200%);
+    }
+    60% {
+      -webkit-transform: translateX(-200%);
+              transform: translateX(-200%);
+    }
+    75% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    85% {
+      -webkit-transform: translateX(-300%);
+              transform: translateX(-300%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
 }
 
-@-webkit-keyframes carousel {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  25% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  35% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  50% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-  60% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-  75% {
-    -webkit-transform: translateX(-300%);
-            transform: translateX(-300%);
-  }
-  85% {
-    -webkit-transform: translateX(-300%);
-            transform: translateX(-300%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+#tasks .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #cecece;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes carousel {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  10% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  25% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  35% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  50% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-  60% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
-  }
-  75% {
-    -webkit-transform: translateX(-300%);
-            transform: translateX(-300%);
-  }
-  85% {
-    -webkit-transform: translateX(-300%);
-            transform: translateX(-300%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
+#tasks .task .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+}
+
+#tasks .task .content .text {
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: none;
+  margin: 5px 0;
+  background-color: #cecece;
+}
+
+#tasks .task .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+#tasks .task .action button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#tasks .task .action button:hover {
+  opacity: 0.8;
+}
+
+#tasks .task .action button:active {
+  opacity: 0.6;
+}
+
+#tasks .task .action .edit {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ec4899), to(#8b5cf6));
+  background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+}
+
+#tasks .task .action .delete {
+  color: crimson;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */
