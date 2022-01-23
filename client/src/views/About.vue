@@ -2,7 +2,6 @@
   <div class="about">
     <h1>Game content</h1>
     <!-- Form post Game -->
-    <img src="..\assets\img\2022-01-13T13-32-38.647Z-NUTNUT.png" alt="" />
     <form
       @submit.prevent="postUser"
       enctype="multipart/form-data"
@@ -111,7 +110,6 @@
 </template>
 
 <script>
-const axios = require("axios");
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import CKEditor from "@ckeditor/ckeditor5-vue";
 export default {
@@ -135,10 +133,20 @@ export default {
     ckeditor: CKEditor.component,
   },
   mounted() {
+    const axios = require("axios");
     axios
-      .get("/api/game/")
+      .get("/api/press/")
       .then((response) => {
         console.log(response.data);
+        console.log(
+          Object.values(response.data).filter((user) => user.title == "NutNut")
+        );
+        console.log(
+          Object.values(response.data).filter((user) =>
+            user.date.includes(2021)
+          )
+        );
+        console.log(Object.values(response.data.date).includes(2021));
       })
 
       .catch((error) => {

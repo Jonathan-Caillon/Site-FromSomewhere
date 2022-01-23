@@ -1,9 +1,9 @@
 <template>
-  <div id="nav">
+  <nav id="nav">
     <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/Press">Press</router-link>
-  </div>
+    <router-link to="/press">Press</router-link>
+    <router-link to="/support">Support</router-link>
+  </nav>
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default{
   width: 20vw;
   height: 100vh;
   padding-top: 5vh;
+  z-index: 9;
   background-color: rgb(24, 24, 24);
   display: flex;
   flex-direction: column;
@@ -36,5 +37,46 @@ export default{
 }
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+@media screen and (max-width: 1000px) {
+  #nav{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    padding: 0;
+    background: #FFF;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #nav a {
+    position: relative;
+    width: calc(100vw / 3);
+    height: 100%;
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #000 !important;
+  }
+
+  #nav > a:nth-child(2):after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 50%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    pointer-events: none;
+  }
 }
 </style>
