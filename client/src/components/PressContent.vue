@@ -132,8 +132,11 @@ button {
   color: white;
   cursor: pointer;
   border: 0;
-  margin-right: 30px;
   font-size: 1.5rem;
+}
+
+button:not(:last-child){
+  margin-right: 30px;
 }
 
 .press-container{
@@ -157,6 +160,7 @@ button {
   height: 100px;
   width: 100px;
   margin-right: 50px;
+  border-radius: 20px;
 }
 
 .article-title{
@@ -178,31 +182,54 @@ button {
   text-align: right;
 }
 
-@media (max-width: 1050px){
+@media (max-width: 1000px){
   button{
     width: 100px;
-    margin-right: 15px;
+  }
+  button:not(:last-child){
+  margin-right: 15px;
+  }
+
+  .articles-container{
+    padding: 0 15%;
   }
 }
 
-@media (max-width: 850px){
+@media (max-width: 1000px){
   .articleBody{
     margin-top: 30px;
   }
+
+  .article-image{
+    width: 150px;
+    height: 150px;
+  }
 }
 
-@media (max-width: 750px){
+@media (max-width: 500px){
   .articleBody{
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
+  .articles-container{
+    padding: 0 10%;
+  }
   .article-txt {
     width: 100%;
+    padding: 0;
   }
   .article-image{
     margin: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px){
+  .articles-container{
+    padding: 0 5%;
   }
 }
 

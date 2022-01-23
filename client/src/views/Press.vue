@@ -34,6 +34,7 @@ export default {
 
 main{
   display: flex;
+  overflow: hidden;
 }
 
 .wrapper{
@@ -49,9 +50,17 @@ header{
   height: 100%;
   width: 100%;
   overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-@media (max-width: 750px){
+/* Hide scrollbar for Chrome, Safari and Opera */
+header::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (max-width: 1000px){
   .wrapper{
     width: 100vw;
   }
