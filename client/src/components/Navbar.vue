@@ -34,6 +34,8 @@ export default{
   text-decoration: none;
   color: white;
   margin-bottom: 10vh;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 #nav a.router-link-exact-active {
   color: #42b983;
