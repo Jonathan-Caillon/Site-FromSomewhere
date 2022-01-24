@@ -1,18 +1,18 @@
 <template>
-    <main>
-        <Navbar />
-        <div class="wrapper">
-            <header>
-                <PageTitle pageName="Press Release" />
-                <PressBody />
-            </header>
-            <PageFooter />
-        </div>
-    </main>
+  <main>
+    <Navbar />
+    <div class="wrapper">
+      <header>
+        <PageTitle pageName="Press Release" />
+        <PressBody />
+      </header>
+      <PageFooter />
+    </div>
+  </main>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
+import Navbar from "@/components/Navbar.vue";
 import PageFooter from "@/components/PageFooter.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import PressHeader from "@/components/PressHeader.vue";
@@ -26,32 +26,29 @@ export default {
     PressHeader,
     PressBody,
     Navbar,
-  }
+  },
 };
 </script>
 
 <style scoped>
-
-main{
+main {
   display: flex;
   overflow: hidden;
 }
 
-.wrapper{
+.wrapper {
   width: 80vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
-
-header{
+header {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: center;
   width: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -59,11 +56,9 @@ header::-webkit-scrollbar {
   display: none;
 }
 
-
-@media (max-width: 1000px){
-  .wrapper{
+@media (max-width: 1000px) {
+  .wrapper {
     width: 100vw;
   }
 }
-
 </style>

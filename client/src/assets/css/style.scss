@@ -662,12 +662,11 @@
         transition: 0.4s;
         border: none;
         margin: 5px 0;
-        background-color: #cecece;
       }
     }
-    .action {
+    .actions {
       display: flex;
-      margin: 0 -0.5rem;
+      margin: 0;
       button {
         cursor: pointer;
         margin: 0 0.5rem;
@@ -683,14 +682,13 @@
         opacity: 0.6;
       }
       .edit {
-        background-image: linear-gradient(to right, #ec4899, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         border: none;
+        background: none;
       }
       .delete {
         color: crimson;
         border: none;
+        background: none;
       }
     }
   }

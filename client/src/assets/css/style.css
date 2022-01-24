@@ -841,17 +841,16 @@
   transition: 0.4s;
   border: none;
   margin: 5px 0;
-  background-color: #cecece;
 }
 
-#tasks .task .action {
+#tasks .task .actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -0.5rem;
+  margin: 0;
 }
 
-#tasks .task .action button {
+#tasks .task .actions button {
   cursor: pointer;
   margin: 0 0.5rem;
   font-size: 1.125rem;
@@ -861,24 +860,22 @@
   transition: 0.4s;
 }
 
-#tasks .task .action button:hover {
+#tasks .task .actions button:hover {
   opacity: 0.8;
 }
 
-#tasks .task .action button:active {
+#tasks .task .actions button:active {
   opacity: 0.6;
 }
 
-#tasks .task .action .edit {
-  background-image: -webkit-gradient(linear, left top, right top, from(#ec4899), to(#8b5cf6));
-  background-image: linear-gradient(to right, #ec4899, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+#tasks .task .actions .edit {
   border: none;
+  background: none;
 }
 
-#tasks .task .action .delete {
+#tasks .task .actions .delete {
   color: crimson;
   border: none;
+  background: none;
 }
 /*# sourceMappingURL=style.css.map */

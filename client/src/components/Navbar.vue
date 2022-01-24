@@ -7,15 +7,12 @@
 </template>
 
 <script>
-
-export default{
+export default {
   name: "Navbar",
-}
-
+};
 </script>
 
 <style scoped>
-
 #nav {
   padding: 30px;
   width: 20vw;
@@ -42,14 +39,14 @@ export default{
 }
 
 @media screen and (max-width: 1000px) {
-  #nav{
+  #nav {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 60px;
     padding: 0;
-    background: #FFF;
+    background: #fff;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -68,8 +65,8 @@ export default{
     color: #000 !important;
   }
 
-  #nav > a:nth-child(2):after{
-    content: '';
+  #nav > a:nth-child(2):after {
+    content: "";
     position: absolute;
     top: 50%;
     left: 0;
