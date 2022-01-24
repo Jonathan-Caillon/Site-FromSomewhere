@@ -10,11 +10,12 @@
       <div class="press-article" v-for="article in articles" :key="article.id">
         <div class="articleBody">
           <img class="article-image" :src="require('../assets/img/'+article.imageName)" alt="">
-          <div class="article-txt">
+          <div v-show="this.articleView == false" class="article-txt" @click="toggleInfo">
             <div class="article-title">{{ article.title }}</div><br>
             <div class="article-excerpt">{{ article.excerpt }}</div>
             <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
           </div>
+          <div v-show="this.articleView == true" class="article-full" @click="toggleInfo">"{{ article.body }}</div>
         </div>
     </div>
       <!-- <div class="bloc-modal">
@@ -45,6 +46,8 @@ export default {
   data(){
     return {
       articles: [],
+      articleView: false,
+      articleSet: [],
     }
   },
   methods: {
@@ -69,6 +72,13 @@ export default {
       .then(response => {
         this.articles = response.data
       })
+    },
+    toggleInfo: function (){
+      if (this.articleView == false){
+        this.articleView = true
+      }else{
+        this.articleView = false
+      }
     }
     // toggleFull: function(){
     //   if (fullOn = false){
@@ -84,6 +94,7 @@ export default {
     axios.get(API)
       .then(response => {
         this.articles = response.data
+        console.log(response)
       })
       .catch(error => {
         console.log(error)
@@ -156,11 +167,15 @@ button:not(:last-child){
   align-items: center;
 }
 
- .article-image{
-    width: 150px;
-    height: 150px;
-    margin-right: 50px;
-  }
+.articleBody a {
+  color: #42b983;
+}
+
+.article-image{
+  width: 150px;
+  height: 150px;
+  margin-right: 50px;
+}
 
 .article-title{
   text-align: center;
@@ -174,11 +189,18 @@ button:not(:last-child){
   flex-direction: column;
   margin-top: 10px;
   padding: 0 20px;
+  cursor: pointer;
 }
 
 .article-link{
   margin-top: 10px;
   text-align: right;
+}
+
+.article-full{
+  max-height: 200px;
+  overflow-y: scroll;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px){
