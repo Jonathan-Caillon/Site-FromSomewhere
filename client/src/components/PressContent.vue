@@ -156,12 +156,11 @@ button:not(:last-child){
   align-items: center;
 }
 
-.article-image{
-  height: 100px;
-  width: 100px;
-  margin-right: 50px;
-  border-radius: 20px;
-}
+ .article-image{
+    width: 150px;
+    height: 150px;
+    margin-right: 50px;
+  }
 
 .article-title{
   text-align: center;
@@ -198,11 +197,6 @@ button:not(:last-child){
 @media (max-width: 1000px){
   .articleBody{
     margin-top: 30px;
-  }
-
-  .article-image{
-    width: 150px;
-    height: 150px;
   }
 }
 
