@@ -39,13 +39,24 @@ export default{
 .title-bloc h2 {
   color: #000;
   font-size: 2rem;
-  padding-left: 50px;
+  padding-left: 3vw;
   text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 1000px) {
   .title-bloc h1{
     font-size: 25px;
+  }
+  .title-bloc h2{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .title-bloc h2 {
+    text-align: center;
+    padding: 0;
   }
 }
 
