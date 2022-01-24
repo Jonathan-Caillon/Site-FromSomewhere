@@ -37,9 +37,9 @@ export default{
 }
 
 .title-bloc h2 {
-  text-align: center;
   color: #000;
   font-size: 2rem;
+  padding-left: 50px;
   text-transform: uppercase;
 }
 
