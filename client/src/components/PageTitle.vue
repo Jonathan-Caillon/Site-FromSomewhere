@@ -1,6 +1,6 @@
 <template>
 <div class="title-bloc">
-  <h1>FROMSOMEWHERE</h1>
+  <router-link to="/"><h1>FROMSOMEWHERE</h1></router-link>
   <h2>{{ pageName }}</h2>
 </div>
   
@@ -38,10 +38,12 @@ export default{
 
 .title-bloc h2 {
   color: #000;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
   padding-left: 3vw;
   text-transform: uppercase;
   margin-bottom: 25px;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1000px) {
