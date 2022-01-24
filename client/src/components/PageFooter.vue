@@ -36,7 +36,7 @@ export default {
 footer {
   background-color: black;
   color: white;
-  height: 15vh;
+  height: 20vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
