@@ -10,23 +10,15 @@
       <div class="press-article" v-for="article in articles" :key="article.id">
         <div class="articleBody">
           <img class="article-image" :src="require('../assets/img/'+article.imageName)" alt="">
-          <div v-show="this.articleView == false" class="article-txt" @click="toggleInfo">
+          <div v-show="this.articleView == false" class="articleCheck article-txt" @click="toggleOn">
             <div class="article-title">{{ article.title }}</div><br>
             <div class="article-excerpt">{{ article.excerpt }}</div>
             <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
           </div>
-          <div v-show="this.articleView == true" class="article-full" @click="toggleInfo">"{{ article.body }}</div>
+          <div v-show="this.articleView == true" class="articleCheck article-full" @click="toggleOff">"{{ article.body }}</div>
         </div>
-    </div>
-      <!-- <div class="bloc-modal">
-        <div class="overlay" @click="toggleModalOFF"></div>
-        <div class="modal">
-          <button class="btn-modal" @click="toggleModalOFF">exit</button>
-          <div class="modal-body">{{article.body}}</div>
-        </div>
-      </div> -->
+      </div>
     </div> 
-
   </div>
 
 </template>
@@ -46,8 +38,7 @@ export default {
   data(){
     return {
       articles: [],
-      articleView: false,
-      articleSet: [],
+      articleView: [],
     }
   },
   methods: {
@@ -73,56 +64,37 @@ export default {
         this.articles = response.data
       })
     },
-    toggleInfo: function (){
-      if (this.articleView == false){
-        this.articleView = true
-      }else{
-        this.articleView = false
-      }
-    }
-    // toggleFull: function(){
-    //   if (fullOn = false){
-    //     this.innerHTML = '<div class="article-excerpt">{{ article.body }}</div>' ;
-    //     fullOn = true ;
-    //   } else {
-    //     this.innerHTML = '<div class="article-title">{{ article.title }} </div><br><div class="article-excerpt">{{ article.excerpt }}</div>' ;
-    //     fullOn = false ;
-    //   }
+    // toggleInfo: function (){
+    //   let currentArticles = document.querySelectorAll('.articleCheck');
+    //   console.log(currentArticles);
+    //   currentArticles.forEach(el => {
+    //     if (el.articleView == false){
+    //       el.articleView = true
+    //     }else{
+    //       el.articleView = false
+    //     }
+    //   });
     // },
+    toggleOn: function(){
+      this.articleView = true
+    },
+    toggleOff: function(){
+      this.articleView = false
+    },
   },
   created(){
     axios.get(API)
       .then(response => {
         this.articles = response.data
-        console.log(response)
+        articles.forEach(el => {
+          el.articleView = false
+        })
+        console.log(articleView)
       })
       .catch(error => {
         console.log(error)
       });
   },
-  // mounted(){
-  //   // CHECK IF FOUND AND OFC NOT BECAUSE MOTHERF*CKIN' VUE
-
-  //   let articleNumber = document.querySelectorAll('.article-txt').length ;
-  //   console.log ("Nombre d'articles : " + articleNumber);
-
-  //   // TOGGLE FULL
-
-  //   let fullOn = false ;
-
-  //   document.querySelectorAll('.article-txt').forEach(item => {
-  //     item.addEventListener('click', event => {
-  //       if (fullOn == false){
-  //         item.innerHTML = '<div class="article-body">{{ article.body }}</div>' ;
-  //         fullOn = true ;
-  //       } else {
-  //         item.innerHTML = '<div class="article-title">{{ article.title }} </div><br><div class="article-excerpt">{{ article.excerpt }}</div>' ;
-  //         fullOn = false ;
-  //       }
-  //     })
-  //   })
-
-  // }
 }
 
 </script>
