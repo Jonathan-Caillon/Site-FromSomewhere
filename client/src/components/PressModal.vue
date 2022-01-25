@@ -1,10 +1,9 @@
 <template>
 
 <div class="bloc-modal" v-if="reveal">
-  <div class="overlay" @click="toggleModal"></div>
-  <div class="modal">
-    <button class="btn-modal" @click="toggleModal">exit</button>
-    <div class="modal-body">{{modalBody}}</div>
+  <div class="overlay" @click="toggleInfo"></div>
+  <div v-for="article in articles" :key="article.id" class="modal">
+    <div v-html="article.body" class="modal-body"></div>
   </div>
 </div>
 
@@ -14,11 +13,11 @@
 
   export default {
     name: "PressModal",
-    // props: ['reveal', 'toggleModal', 'modalBody']
-    props: {
-      reveal : Boolean,
-      toggleModal: Function,
-    }
+    props: ['reveal', 'toggleInfo', 'reqID']
+    // props: {
+    //   reveal : Boolean,
+    //   toggleModal: Function,
+    // }
   };
 
 </script>

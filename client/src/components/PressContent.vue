@@ -1,5 +1,4 @@
 <template>
-
   <div class="press-container">
     <div class="press-nav">
       <button @click="req2020">2020</button>
@@ -7,99 +6,118 @@
       <button @click="reqAll">TOUS</button>
     </div>
     <div class="articles-container">
-      <div class="press-article" v-for="article in articles" :key="article.id">
+      <div
+        class="press-article"
+        v-for="(article, index) in articles"
+        :key="index"
+      >
         <div class="articleBody">
-          <img class="article-image" :src="require('../assets/img/'+article.imageName)" alt="">
-          <div v-show="this.articleView == false" class="articleCheck article-txt" @click="toggleOn">
-            <div class="article-title">{{ article.title }}</div><br>
+          <img
+            class="article-image"
+            :src="require('../assets/img/' + article.imageName)"
+            alt=""
+          />
+          <div
+            class="articleCheck article-txt"
+            :id="index"
+            @click="toggleActive(index), toggleHidden(index)"
+            v-bind:class="{ Hide: isHidden(index) }"
+          >
+            <div class="article-title">{{ article.title }}</div>
+            <br />
             <div class="article-excerpt">{{ article.excerpt }}</div>
-            <div class="article-link"><a target="blank" :href="article.link">Lien vers l'article</a></div>
+            <div class="article-link">
+              <a>Cliquer pour charger l'article</a>
+            </div>
           </div>
-          <div v-show="this.articleView == true" class="articleCheck article-full" @click="toggleOff">"{{ article.body }}</div>
+          <div
+            :id="index"
+            v-html="article.body"
+            class="articleCheck article-full hidden"
+            v-bind:class="{ Active: isActive(index) }"
+            @click="toggleActive(index), toggleHidden(index)"
+          ></div>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
-
 </template>
 
 <script>
+import axios from "axios";
 
-import axios from 'axios';
-
-const API = '/api/press/';
-
+const API = "/api/press/";
 
 export default {
   name: "PressContent",
-  components: {
-
-  },
-  data(){
+  components: {},
+  data() {
     return {
       articles: [],
       articleView: [],
-    }
+      activeKey: null,
+      hiddenKey: null,
+    };
   },
   methods: {
-    req2020: function(){
-      axios.get(API)
-      .then(response => {
+    req2020: function () {
+      axios.get(API).then((response) => {
         this.articles = Object.values(response.data).filter((user) =>
-            user.date.includes(2020)
-          )
-      })
+          user.date.includes(2020)
+        );
+      });
     },
-    req2021: function(){
-      axios.get(API)
-      .then(response => {
+    req2021: function () {
+      axios.get(API).then((response) => {
         this.articles = Object.values(response.data).filter((user) =>
-            user.date.includes(2021)
-          )
-      })
+          user.date.includes(2021)
+        );
+      });
     },
-    reqAll: function(){
-      axios.get(API)
-      .then(response => {
-        this.articles = response.data
-      })
+    reqAll: function () {
+      axios.get(API).then((response) => {
+        this.articles = response.data;
+      });
     },
-    // toggleInfo: function (){
-    //   let currentArticles = document.querySelectorAll('.articleCheck');
-    //   console.log(currentArticles);
-    //   currentArticles.forEach(el => {
-    //     if (el.articleView == false){
-    //       el.articleView = true
-    //     }else{
-    //       el.articleView = false
-    //     }
-    //   });
-    // },
-    toggleOn: function(){
-      this.articleView = true
+    isHidden(i){
+      return this.hiddenKey === i;
     },
-    toggleOff: function(){
-      this.articleView = false
+    isActive(i) {
+      return this.activeKey === i;
+    },
+    toggleHidden(i){
+      this.hiddenKey = this.isHidden(i) ? null : i;
+    },
+    toggleActive(i) {
+      this.activeKey = this.isActive(i) ? null : i;
     },
   },
-  created(){
-    axios.get(API)
-      .then(response => {
-        this.articles = response.data
-        articles.forEach(el => {
-          el.articleView = false
-        })
-        console.log(articleView)
+  created() {
+    axios
+      .get(API)
+      .then((response) => {
+        this.articles = response.data;
       })
-      .catch(error => {
-        console.log(error)
+      .catch((error) => {
+        console.log(error);
       });
   },
-}
-
+  mounted() {},
+};
 </script>
 
 <style scoped>
+
+.Hide{
+  display: none !important;
+}
+
+.Active {
+  display: block !important;
+}
+.hidden {
+  display: none;
+}
 
 .press-nav {
   border-bottom: solid black 1px;
@@ -118,21 +136,21 @@ button {
   font-size: 1.5rem;
 }
 
-button:not(:last-child){
+button:not(:last-child) {
   margin-right: 30px;
 }
 
-.press-container{
+.press-container {
   height: 100%;
   width: 100%;
 }
 
-.articles-container{
+.articles-container {
   width: 100%;
   padding: 0 20%;
 }
 
-.articleBody{
+.articleBody {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -143,19 +161,19 @@ button:not(:last-child){
   color: #42b983;
 }
 
-.article-image{
+.article-image {
   width: 150px;
   height: 150px;
   margin-right: 50px;
 }
 
-.article-title{
+.article-title {
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-.article-txt{
+.article-txt {
   height: 100%;
   width: calc(100% - 150px);
   flex-direction: column;
@@ -164,61 +182,61 @@ button:not(:last-child){
   cursor: pointer;
 }
 
-.article-link{
+.article-link {
   margin-top: 10px;
   text-align: right;
 }
 
-.article-full{
+.article-full {
   max-height: 200px;
   overflow-y: scroll;
+  overflow-x: hidden;
   cursor: pointer;
 }
 
-@media (max-width: 1000px){
-  button{
+@media (max-width: 1000px) {
+  button {
     width: 100px;
   }
-  button:not(:last-child){
-  margin-right: 15px;
+  button:not(:last-child) {
+    margin-right: 15px;
   }
 
-  .articles-container{
+  .articles-container {
     padding: 0 15%;
   }
 }
 
-@media (max-width: 1000px){
-  .articleBody{
+@media (max-width: 1000px) {
+  .articleBody {
     margin-top: 30px;
   }
 }
 
-@media (max-width: 500px){
-  .articleBody{
+@media (max-width: 500px) {
+  .articleBody {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
-  .articles-container{
+  .articles-container {
     padding: 0 10%;
   }
   .article-txt {
     width: 100%;
     padding: 0;
   }
-  .article-image{
+  .article-image {
     margin: 0;
     width: 200px;
     height: 200px;
   }
 }
 
-@media (max-width: 500px){
-  .articles-container{
+@media (max-width: 500px) {
+  .articles-container {
     padding: 0 5%;
   }
 }
-
 </style>
