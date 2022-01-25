@@ -6,7 +6,9 @@
         <PageTitle pageName="Support" />
         <Form />
       </header>
-      <PageFooter />
+      <div class="bottom">
+        <PageFooter />
+      </div>
     </div>
   </main>
 </template>
@@ -27,6 +29,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.bottom {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
   width: 100%;
 }
 
