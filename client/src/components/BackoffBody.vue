@@ -60,13 +60,16 @@
           <div class="meta">
             <div class="metaheader">
               <h3>Metacritique</h3>
+
               <div id="new-task-form">
+                <label for="new-author-input">Auteur</label>
                 <input
                   type="text"
                   name="new-author-input"
                   id="new-author-input"
                   placeholder="Author?"
                 />
+                <label for="new-author-input">Description</label>
                 <input
                   type="text"
                   name="new-task-input"
