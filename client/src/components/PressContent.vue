@@ -214,7 +214,7 @@ button:not(:last-child) {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .articleBody {
     flex-direction: column;
     align-items: center;
@@ -229,7 +229,7 @@ button:not(:last-child) {
     padding: 0;
   }
   .article-image {
-    margin: 0;
+    margin: 20px 0;
     width: 200px;
     height: 200px;
   }

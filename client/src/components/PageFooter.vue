@@ -110,4 +110,10 @@ a {
 .footer-social a svg {
   fill: #fff;
 }
+
+@media (max-width: 1000px){
+  footer{
+    margin-bottom: 60px;
+  }
+}
 </style>
