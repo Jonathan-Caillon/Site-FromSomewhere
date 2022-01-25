@@ -6,7 +6,9 @@
         <PageTitle pageName="Press Release" />
         <PressBody />
       </header>
-      <PageFooter />
+      <div class="bottom">
+        <PageFooter />
+      </div>
     </div>
   </main>
 </template>
@@ -34,6 +36,12 @@ export default {
 main {
   display: flex;
   overflow: hidden;
+}
+.bottom {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .wrapper {
