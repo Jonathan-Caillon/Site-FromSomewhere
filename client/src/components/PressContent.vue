@@ -115,6 +115,7 @@ export default {
 .Active {
   display: block !important;
 }
+
 .hidden {
   display: none;
 }
