@@ -137,6 +137,10 @@ button {
   font-size: 1.5rem;
 }
 
+button:hover {
+  color: #42b983;
+}
+
 button:not(:last-child) {
   margin-right: 30px;
 }
