@@ -156,10 +156,11 @@ button:not(:last-child) {
 }
 
 .articleBody {
-  margin-top: 20px;
+  margin: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 200px;
 }
 
 .articleBody a {
@@ -179,7 +180,6 @@ button:not(:last-child) {
 }
 
 .article-txt {
-  height: 100%;
   width: calc(100% - 150px);
   flex-direction: column;
   margin-top: 10px;
@@ -210,9 +210,7 @@ button:not(:last-child) {
   .articles-container {
     padding: 0 15%;
   }
-}
 
-@media (max-width: 1000px) {
   .articleBody {
     margin-top: 30px;
   }
@@ -224,6 +222,7 @@ button:not(:last-child) {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 400px;
   }
   .articles-container {
     padding: 0 10%;
@@ -235,7 +234,7 @@ button:not(:last-child) {
   .article-image {
     margin: 20px 0;
     width: 200px;
-    height: 200px;
+    height: 150px;
   }
 }
 
